@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GoRoyo - Sistem Tanggap Cepat Berbasis Warga. Demo konsep aplikasi komunitas RT/RW Indonesia.">
+<title>GoRoyo — Sistem Tanggap Cepat Berbasis Warga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1B4FD8;
+    --primary-dark: #1340B0;
+    --primary-light: #EEF2FF;
+    --accent: #F97316;
+    --red: #DC2626;
+    --red-light: #FEF2F2;
+    --blue: #2563EB;
+    --blue-light: #EFF6FF;
+    --amber: #D97706;
+    --amber-light: #FFFBEB;
+    --green: #16A34A;
+    --green-light: #F0FDF4;
+    --purple: #7C3AED;
+    --purple-light: #F5F3FF;
+    --teal: #0D9488;
+    --teal-light: #F0FDFA;
+    --slate: #475569;
+    --surface: #F8FAFC;
+    --card: #FFFFFF;
+    --border: #E2E8F0;
+    --text: #0F172A;
+    --text-muted: #64748B;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--surface);
+    color: var(--text);
+    min-height: 100vh;
+    max-width: 480px;
+    margin: 0 auto;
+    padding-bottom: 90px;
+  }
+
+  /* HEADER */
+  .app-header {
+    background: var(--primary);
+    padding: 20px 20px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-icon svg { width: 22px; height: 22px; }
+  .logo-text {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.5px;
+  }
+  .logo-text span { color: #FCD34D; }
+  .header-badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: white;
+    font-weight: 500;
+  }
+  .location-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 8px 12px;
+  }
+  .location-row svg { width: 14px; height: 14px; color: #FCD34D; flex-shrink: 0; }
+  .location-text { font-size: 13px; color: rgba(255,255,255,0.9); }
+  .location-text strong { color: white; font-weight: 600; }
+
+  /* API KEY BANNER */
+  .api-banner {
+    margin: 16px;
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .api-banner svg { width: 18px; height: 18px; color: var(--amber); flex-shrink: 0; margin-top: 1px; }
+  .api-banner-text { font-size: 12px; color: #92400E; line-height: 1.5; }
+  .api-banner-text strong { display: block; font-size: 13px; margin-bottom: 4px; }
+  .api-input-row { display: flex; gap: 8px; margin-top: 8px; }
+  .api-input {
+    flex: 1;
+    border: 1px solid #FDE68A;
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: white;
+    color: var(--text);
+    outline: none;
+  }
+  .api-input:focus { border-color: var(--amber); }
+  .api-save-btn {
+    background: var(--amber);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 7px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    white-space: nowrap;
+  }
+  .api-save-btn:active { opacity: 0.85; }
+  .api-set-msg { font-size: 12px; color: var(--green); font-weight: 600; margin-top: 6px; display: none; }
+
+  /* CONTENT */
+  .content { padding: 0 16px; }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0 12px;
+  }
+  .section-head svg { width: 16px; height: 16px; color: var(--text-muted); }
+  .section-head h2 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* EMERGENCY GRID */
+  .emergency-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .btn-emergency {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 12px 14px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .btn-emergency::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 2px 2px 0 0;
+  }
+  .btn-emergency:active { transform: scale(0.97); box-shadow: none; }
+  .btn-emergency .e-icon {
+    width: 46px; height: 46px;
+    border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .btn-emergency .e-icon svg { width: 24px; height: 24px; }
+  .btn-emergency .e-label { font-size: 13px; font-weight: 700; color: var(--text); }
+  .btn-emergency .e-num { font-size: 10px; color: var(--text-muted); font-weight: 500; }
+
+  .e-red::before { background: var(--red); }
+  .e-red .e-icon { background: var(--red-light); color: var(--red); }
+  .e-blue::before { background: var(--blue); }
+  .e-blue .e-icon { background: var(--blue-light); color: var(--blue); }
+  .e-amber::before { background: var(--amber); }
+  .e-amber .e-icon { background: var(--amber-light); color: var(--amber); }
+  .e-purple::before { background: var(--purple); }
+  .e-purple .e-icon { background: var(--purple-light); color: var(--purple); }
+  .e-green::before { background: var(--green); }
+  .e-green .e-icon { background: var(--green-light); color: var(--green); }
+  .e-teal::before { background: var(--teal); }
+  .e-teal .e-icon { background: var(--teal-light); color: var(--teal); }
+
+  /* OFFICER CARD */
+  .officer-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .officer-shift-bar {
+    background: var(--primary);
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .officer-shift-bar span { font-size: 12px; color: white; font-weight: 500; }
+  .shift-dot { width: 8px; height: 8px; background: #4ADE80; border-radius: 50%; display: inline-block; margin-right: 6px; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .officer-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    gap: 10px;
+  }
+  .officer-row:last-child { border-bottom: none; }
+  .officer-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0;
+  }
+  .av-green { background: var(--green-light); color: var(--green); }
+  .av-blue  { background: var(--blue-light); color: var(--blue); }
+  .av-amber { background: var(--amber-light); color: var(--amber); }
+  .officer-info { flex: 1; }
+  .officer-name { font-size: 13px; font-weight: 600; color: var(--text); }
+  .officer-role { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+  .status-pill {
+    font-size: 10px; font-weight: 600; padding: 3px 9px;
+    border-radius: 20px;
+  }
+  .pill-on  { background: var(--green-light); color: var(--green); }
+  .pill-off { background: #F1F5F9; color: #94A3B8; }
+  .call-pill {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--green-light); color: var(--green);
+    border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .call-pill.disabled { background: #F1F5F9; color: #CBD5E1; cursor: default; }
+  .call-pill svg { width: 15px; height: 15px; }
+
+  /* ANNOUNCEMENTS */
+  .announce-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .announce-item {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+  .announce-item:last-child { border-bottom: none; }
+  .announce-item:active { background: var(--surface); }
+  .announce-tags { display: flex; gap: 5px; margin-bottom: 5px; }
+  .tag {
+    font-size: 10px; font-weight: 600; padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .tag-warning { background: #FEF9C3; color: #854D0E; }
+  .tag-info    { background: var(--blue-light); color: #1D4ED8; }
+  .tag-event   { background: var(--green-light); color: #166534; }
+  .tag-health  { background: var(--purple-light); color: #6D28D9; }
+  .announce-title { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.4; }
+  .announce-meta { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+  /* MODAL OVERLAY */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(15,23,42,0.6);
+    backdrop-filter: blur(4px);
+    display: flex; align-items: flex-end; justify-content: center;
+    z-index: 100;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .modal-overlay.active { opacity: 1; pointer-events: all; }
+  .modal-sheet {
+    background: white;
+    width: 100%; max-width: 480px;
+    border-radius: 24px 24px 0 0;
+    padding: 0 0 32px;
+    transform: translateY(40px);
+    transition: transform 0.25s cubic-bezier(0.32,0.72,0,1);
+    max-height: 88vh;
+    overflow-y: auto;
+  }
+  .modal-overlay.active .modal-sheet { transform: translateY(0); }
+  .modal-drag { width: 36px; height: 4px; background: #E2E8F0; border-radius: 2px; margin: 12px auto 0; }
+  .modal-header {
+    padding: 16px 20px 14px;
+    display: flex; align-items: center; gap: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .modal-icon-wrap {
+    width: 52px; height: 52px; border-radius: 15px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .modal-icon-wrap svg { width: 28px; height: 28px; }
+  .modal-title { font-size: 17px; font-weight: 700; color: var(--text); }
+  .modal-number { font-size: 13px; font-weight: 600; margin-top: 2px; }
+  .modal-body { padding: 16px 20px; }
+
+  /* AI GUIDE SECTION */
+  .ai-guide-box {
+    background: var(--primary-light);
+    border: 1px solid #C7D7F9;
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+  .ai-guide-header {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+  }
+  .ai-badge {
+    background: var(--primary);
+    color: white;
+    font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 20px;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .ai-badge svg { width: 10px; height: 10px; }
+  .ai-guide-title { font-size: 12px; font-weight: 600; color: var(--primary); }
+  .ai-guide-content { font-size: 13px; line-height: 1.65; color: #1E3A8A; }
+  .ai-guide-content .step { display: flex; gap: 8px; margin-bottom: 7px; }
+  .ai-guide-content .step-num {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--primary); color: white;
+    font-size: 10px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .step-text { flex: 1; }
+  .ai-loading {
+    display: flex; align-items: center; gap: 8px;
+    color: var(--primary); font-size: 13px;
+  }
+  .ai-loading-dots { display: flex; gap: 4px; }
+  .ai-loading-dots span {
+    width: 6px; height: 6px; background: var(--primary);
+    border-radius: 50%; animation: bounce 1.2s infinite;
+  }
+  .ai-loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .ai-loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+
+  /* STATIC GUIDE */
+  .static-guide { font-size: 13px; color: var(--text); line-height: 1.65; }
+  .static-guide .step { display: flex; gap: 8px; margin-bottom: 8px; }
+  .step-icon { font-size: 15px; flex-shrink: 0; width: 20px; text-align: center; margin-top: 1px; }
+
+  /* NOTIFY SECTION */
+  .notify-section {
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+  .notify-title { font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+  .notify-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .notify-row:last-child { margin-bottom: 0; }
+  .notify-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+  .notify-dot.off { background: #CBD5E1; }
+  .notify-name { font-size: 12px; color: var(--text); font-weight: 500; flex: 1; }
+  .notify-status { font-size: 11px; color: var(--text-muted); }
+
+  /* MODAL ACTIONS */
+  .modal-actions { display: flex; gap: 10px; padding: 0 20px; }
+  .btn-dismiss {
+    flex: 0; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 13px 18px;
+    font-size: 14px; font-weight: 600; color: var(--text-muted);
+    cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .btn-call-now {
+    flex: 1; border: none; border-radius: 14px;
+    padding: 14px; font-size: 15px; font-weight: 700;
+    color: white; cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-call-now svg { width: 18px; height: 18px; }
+  .btn-call-now:active { opacity: 0.9; transform: scale(0.99); }
+
+  /* DEMO BANNER */
+  .demo-banner {
+    margin: 16px;
+    background: #F1F5F9;
+    border: 1px dashed #CBD5E1;
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .demo-banner svg { width: 16px; height: 16px; color: #94A3B8; flex-shrink: 0; margin-top: 1px; }
+  .demo-banner p { font-size: 11px; color: #64748B; line-height: 1.5; }
+
+  /* BOTTOM NAV */
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 100%; max-width: 480px;
+    background: white; border-top: 1px solid var(--border);
+    display: flex;
+    padding: 8px 0 12px;
+    z-index: 40;
+  }
+  .nav-item {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; gap: 4px; padding: 6px 8px;
+    cursor: pointer; border: none; background: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .nav-item svg { width: 22px; height: 22px; color: #94A3B8; }
+  .nav-item span { font-size: 10px; font-weight: 600; color: #94A3B8; }
+  .nav-item.active svg { color: var(--primary); }
+  .nav-item.active span { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="app-header">
+  <div class="header-top">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1B4FD8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      <span class="logo-text">Go<span>Royo</span></span>
+    </div>
+    <span class="header-badge">Demo v0.1</span>
+  </div>
+  <div class="location-row">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/>
+    </svg>
+    <span class="location-text"><strong>RT 009 / RW 05</strong> — Kel. Cililitan, Kec. Kramat Jati, Jakarta Timur</span>
+  </div>
+</header>
+
+<!-- API KEY BANNER -->
+<div class="api-banner" id="apiBanner">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+  </svg>
+  <div class="api-banner-text">
+    <strong>Masukkan Gemini API Key untuk panduan AI</strong>
+    Dapatkan gratis di <strong>aistudio.google.com</strong> → Get API Key. Tanpa key, panduan statis tetap tersedia.
+    <div class="api-input-row">
+      <input class="api-input" type="password" id="apiKeyInput" placeholder="AIzaSy...">
+      <button class="api-save-btn" onclick="saveApiKey()">Simpan</button>
+    </div>
+    <div class="api-set-msg" id="apiSetMsg">✓ API Key tersimpan! Panduan AI aktif.</div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- EMERGENCY SECTION -->
+  <div class="section-head">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    </svg>
+    <h2>Tombol Darurat</h2>
+  </div>
+
+  <div class="emergency-grid">
+
+    <button class="btn-emergency e-red" onclick="openEmergency('kebakaran')">
+      <div class="e-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/>
+        </svg>
+      </div>
+      <span class="e-label">Kebakaran</span>
+      <span class="e-num">113 Damkar</span>
+    </button>
+
+    <button class="btn-emergency e-blue" onclick="openEmergency('banjir')">
+      <div class="e-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 12h20M2 12c0-4 4-8 10-8s10 4 10 8M2 12c0 4 4 8 10 8s10-4 10-8"/><path d="M12 2v20"/>
+        </svg>
+      </div>
+      <span class="e-label">Banjir</span>
+      <span class="e-num">119 BPBD</span>
+    </button>
+
+    <button class="btn-emergency e-red" onclick="openEmergency('medis')">
+      <div class="e-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+        </svg>
+      </div>
+      <span class="e-label">Darurat Medis</span>
+      <span class="e-num">119 Ambulans</span>
+    </button>
+
+    <button class="btn-emergency e-amber" onclick="openEmergency('kriminal')">
+      <div class="e-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <span class="e-label">Keamanan</span>
+      <span class="e-num">110 Polisi</span>
+    </button>
+
+    <button class="btn-emergency e-green" onclick="openEmergency('gas')">
+      <div class="e-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="1" y1="1" x2="23" y2="23"/><path d="M9 9v3a3 3 0 005.12 2.12M15 9.34V4a3 3 0 00-5.94-.6"/><path d="M17 16.95A7 7 0 015 12v-2m14 0v2a7 7 0 01-.11 1.23"/>
+        </svg>
+      </div>
+      <span class="e-label">Gas Bocor</span>
+      <span class="e-num">1 600 645</span>
+    </button>
+
+    <button class="btn-emergency e-purple" onclick="openEmergency('gempa')">
+      <div class="e-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+      </div>
+      <span class="e-label">Gempa Bumi</span>
+      <span class="e-num">117 BNPB</span>
+    </button>
+
+  </div>
+
+  <!-- PETUGAS SECTION -->
+  <div class="section-head">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+    </svg>
+    <h2>Petugas Siskamling</h2>
+  </div>
+
+  <div class="officer-card">
+    <div class="officer-shift-bar">
+      <span><span class="shift-dot"></span>Shift Malam Aktif — 20.00 – 04.00 WIB</span>
+      <span style="font-size:11px;opacity:0.7">3 Petugas</span>
+    </div>
+    <div class="officer-row">
+      <div class="officer-avatar av-green">PH</div>
+      <div class="officer-info">
+        <div class="officer-name">Pak Hendra</div>
+        <div class="officer-role">Ketua Pos · Marbot Mushola Al-Ikhlas</div>
+      </div>
+      <span class="status-pill pill-on">Bertugas</span>
+      <button class="call-pill" onclick="location.href='tel:08121234567'" aria-label="Hubungi Pak Hendra">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="officer-row">
+      <div class="officer-avatar av-blue">BS</div>
+      <div class="officer-info">
+        <div class="officer-name">Budi Santoso</div>
+        <div class="officer-role">Petugas · Kendaraan Siaga</div>
+      </div>
+      <span class="status-pill pill-on">Bertugas</span>
+      <button class="call-pill" onclick="location.href='tel:08129876543'" aria-label="Hubungi Budi Santoso">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="officer-row">
+      <div class="officer-avatar av-amber">RD</div>
+      <div class="officer-info">
+        <div class="officer-name">Rudi Dermawan</div>
+        <div class="officer-role">Petugas Cadangan · K3</div>
+      </div>
+      <span class="status-pill pill-off">Libur</span>
+      <button class="call-pill disabled" aria-label="Rudi sedang libur" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- PENGUMUMAN SECTION -->
+  <div class="section-head">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 17H2a3 3 0 000 6h20a3 3 0 000-6zM8 17V1l4 4 4-4v16"/>
+    </svg>
+    <h2>Pengumuman RT/RW</h2>
+  </div>
+
+  <div class="announce-card">
+    <div class="announce-item">
+      <div class="announce-tags">
+        <span class="tag tag-warning">Penting</span>
+        <span class="tag tag-info">Lingkungan</span>
+      </div>
+      <div class="announce-title">Waspada musim hujan — siaga banjir RT 009</div>
+      <div class="announce-meta">RT 009 / RW 05 · Hari ini, 08.30 WIB</div>
+    </div>
+    <div class="announce-item">
+      <div class="announce-tags">
+        <span class="tag tag-event">Kegiatan</span>
+      </div>
+      <div class="announce-title">Kerja bakti bersih selokan — Minggu, 1 Juni 2026</div>
+      <div class="announce-meta">Pengurus RW 05 · Kemarin, 19.00 WIB</div>
+    </div>
+    <div class="announce-item">
+      <div class="announce-tags">
+        <span class="tag tag-health">Kesehatan</span>
+      </div>
+      <div class="announce-title">Jadwal posyandu balita — Jumat, 30 Mei 2026</div>
+      <div class="announce-meta">Ibu PKK RW 05 · 2 hari lalu</div>
+    </div>
+  </div>
+
+  <!-- DEMO NOTICE -->
+  <div class="demo-banner">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+    </svg>
+    <p><strong>Demo Konsep.</strong> Ini adalah prototype untuk #JuaraVibeCoding. Nomor telepon bersifat ilustratif. Full app membutuhkan backend, autentikasi, dan infrastruktur yang lebih lengkap.</p>
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <button class="nav-item active">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+    <span>Beranda</span>
+  </button>
+  <button class="nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+    </svg>
+    <span>Laporan</span>
+  </button>
+  <button class="nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+    </svg>
+    <span>Edukasi</span>
+  </button>
+  <button class="nav-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+    </svg>
+    <span>Profil</span>
+  </button>
+</nav>
+
+<!-- EMERGENCY MODAL -->
+<div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+  <div class="modal-sheet">
+    <div class="modal-drag"></div>
+    <div class="modal-header">
+      <div class="modal-icon-wrap" id="mIconWrap">
+        <svg id="mIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+      </div>
+      <div>
+        <div class="modal-title" id="mTitle"></div>
+        <div class="modal-number" id="mNumber"></div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <!-- AI GUIDE -->
+      <div class="ai-guide-box">
+        <div class="ai-guide-header">
+          <span class="ai-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            Panduan AI
+          </span>
+          <span class="ai-guide-title" id="aiGuideTitle">Memuat panduan...</span>
+        </div>
+        <div class="ai-guide-content" id="aiGuideContent">
+          <div class="ai-loading">
+            <div class="ai-loading-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span>Menganalisis situasi darurat...</span>
+          </div>
+        </div>
+      </div>
+      <!-- NOTIFY -->
+      <div class="notify-section">
+        <div class="notify-title">Notifikasi Otomatis Dikirim ke</div>
+        <div class="notify-row">
+          <div class="notify-dot"></div>
+          <span class="notify-name">Pak Hendra (Ketua Pos)</span>
+          <span class="notify-status">✓ Terkirim</span>
+        </div>
+        <div class="notify-row">
+          <div class="notify-dot"></div>
+          <span class="notify-name">Budi Santoso (Kendaraan)</span>
+          <span class="notify-status">✓ Terkirim</span>
+        </div>
+        <div class="notify-row">
+          <div class="notify-dot off"></div>
+          <span class="notify-name">Rudi Dermawan (Cadangan)</span>
+          <span class="notify-status">Sedang libur</span>
+        </div>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-dismiss" onclick="closeModal()">Tutup</button>
+      <button class="btn-call-now" id="mCallBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+        </svg>
+        Hubungi Sekarang
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+const EMERGENCY_DATA = {
+  kebakaran: {
+    label: 'Kebakaran',
+    number: '113 — Pemadam Kebakaran',
+    tel: 'tel:113',
+    color: '#DC2626',
+    bgColor: '#FEF2F2',
+    iconPath: '<path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/>',
+    staticSteps: [
+      { icon: '⚡', text: 'Matikan MCB listrik utama segera' },
+      { icon: '📢', text: 'Berteriak "KEBAKARAN!" untuk membangunkan warga sekitar' },
+      { icon: '🧯', text: 'Gunakan APAR jika api masih kecil dan aman' },
+      { icon: '🚪', text: 'Evakuasi semua penghuni — jangan gunakan lift' },
+      { icon: '📍', text: 'Kumpul di titik aman depan mushola RT' }
+    ],
+    aiPrompt: 'Kebakaran di lingkungan RT/RW Indonesia'
+  },
+  banjir: {
+    label: 'Banjir',
+    number: '119 — BPBD',
+    tel: 'tel:119',
+    color: '#2563EB',
+    bgColor: '#EFF6FF',
+    iconPath: '<path d="M2 12h20M2 12c0-4 4-8 10-8s10 4 10 8M2 12c0 4 4 8 10 8s10-4 10-8"/><path d="M12 2v20"/>',
+    staticSteps: [
+      { icon: '📋', text: 'Pindahkan dokumen penting & elektronik ke tempat tinggi' },
+      { icon: '⚡', text: 'Matikan listrik dari MCB utama' },
+      { icon: '🎒', text: 'Siapkan tas evakuasi darurat (air, obat, dokumen)' },
+      { icon: '🏃', text: 'Evakuasi ke titik kumpul RT di dataran lebih tinggi' },
+      { icon: '📵', text: 'Hindari berjalan di air banjir — ada arus dan listrik tersembunyi' }
+    ],
+    aiPrompt: 'Banjir mendadak di kawasan padat penduduk Indonesia'
+  },
+  medis: {
+    label: 'Darurat Medis',
+    number: '119 — IGD / Ambulans',
+    tel: 'tel:119',
+    color: '#DC2626',
+    bgColor: '#FEF2F2',
+    iconPath: '<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>',
+    staticSteps: [
+      { icon: '🫁', text: 'Pastikan korban sadar — cek respons dan napas' },
+      { icon: '🛑', text: 'Jangan pindahkan korban kecuali dalam bahaya langsung' },
+      { icon: '🚑', text: 'Hubungi 119 segera — sampaikan lokasi dan kondisi' },
+      { icon: '🩹', text: 'Lakukan pertolongan pertama sesuai kondisi (CPR jika perlu)' },
+      { icon: '🚗', text: 'Hubungi Budi Santoso untuk kendaraan antar ke RS' }
+    ],
+    aiPrompt: 'Kedaruratan medis di lingkungan RT/RW Indonesia'
+  },
+  kriminal: {
+    label: 'Keamanan & Kriminal',
+    number: '110 — Polisi',
+    tel: 'tel:110',
+    color: '#D97706',
+    bgColor: '#FFFBEB',
+    iconPath: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+    staticSteps: [
+      { icon: '🔒', text: 'Kunci pintu dan jendela — jangan konfrontasi langsung' },
+      { icon: '📝', text: 'Catat ciri-ciri pelaku dari jarak aman' },
+      { icon: '📣', text: 'Hubungi petugas siskamling terdekat segera' },
+      { icon: '🚔', text: 'Hubungi 110 dan sampaikan TKP, waktu, deskripsi kejadian' },
+      { icon: '👥', text: 'Kumpulkan saksi setelah situasi aman' }
+    ],
+    aiPrompt: 'Ancaman keamanan atau kriminal di lingkungan RT/RW Indonesia'
+  },
+  gas: {
+    label: 'Gas Bocor',
+    number: '1 600 645 — Layanan Gas PGN',
+    tel: 'tel:1600645',
+    color: '#16A34A',
+    bgColor: '#F0FDF4',
+    iconPath: '<line x1="1" y1="1" x2="23" y2="23"/><path d="M9 9v3a3 3 0 005.12 2.12M15 9.34V4a3 3 0 00-5.94-.6"/><path d="M17 16.95A7 7 0 015 12v-2m14 0v2a7 7 0 01-.11 1.23"/>',
+    staticSteps: [
+      { icon: '🚫', text: 'JANGAN nyalakan atau matikan saklar listrik apapun' },
+      { icon: '🔧', text: 'Tutup katup gas utama di belakang kompor/tabung' },
+      { icon: '🪟', text: 'Buka semua pintu dan jendela untuk ventilasi segera' },
+      { icon: '🏃', text: 'Evakuasi semua orang keluar — jauhi area bocoran' },
+      { icon: '📞', text: 'Telepon dari luar gedung, jangan dari dalam' }
+    ],
+    aiPrompt: 'Kebocoran gas di dapur rumah tangga Indonesia'
+  },
+  gempa: {
+    label: 'Gempa Bumi',
+    number: '117 — BNPB',
+    tel: 'tel:117',
+    color: '#7C3AED',
+    bgColor: '#F5F3FF',
+    iconPath: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+    staticSteps: [
+      { icon: '🙇', text: 'DUCK — berlindung di bawah meja kuat atau di samping tembok' },
+      { icon: '🤚', text: 'COVER — lindungi kepala dan leher dengan tangan' },
+      { icon: '🛑', text: 'HOLD ON — pegang erat sampai guncangan berhenti' },
+      { icon: '🚪', text: 'Keluar lewat tangga darurat — jauhi kaca dan benda jatuh' },
+      { icon: '🕌', text: 'Kumpul di titik evakuasi — Mushola RT 009 Cililitan' }
+    ],
+    aiPrompt: 'Tindakan darurat saat gempa bumi di Indonesia'
+  }
+};
+
+let currentApiKey = localStorage.getItem('gemini_api_key') || '';
+let currentEmergency = null;
+
+function saveApiKey() {
+  const key = document.getElementById('apiKeyInput').value.trim();
+  if (!key || !key.startsWith('AIza')) {
+    alert('Format API key tidak valid. Pastikan dimulai dengan AIza...');
+    return;
+  }
+  localStorage.setItem('gemini_api_key', key);
+  currentApiKey = key;
+  document.getElementById('apiSetMsg').style.display = 'block';
+  setTimeout(() => {
+    document.getElementById('apiBanner').style.display = 'none';
+  }, 2000);
+}
+
+// Check if key already saved
+if (currentApiKey) {
+  document.getElementById('apiBanner').style.display = 'none';
+}
+
+async function fetchGeminiGuide(emergencyType, emergency) {
+  const hour = new Date().getHours();
+  const timeContext = hour >= 22 || hour < 5 ? 'malam hari (warga sedang tidur)' :
+                     hour >= 5 && hour < 12 ? 'pagi hari' :
+                     hour >= 12 && hour < 17 ? 'siang hari' : 'sore/petang hari';
+
+  const prompt = `Kamu adalah asisten tanggap darurat berbasis komunitas RT/RW Indonesia.
+Situasi: ${emergency.aiPrompt}.
+Waktu kejadian: ${timeContext}.
+Konteks: lingkungan padat penduduk di Jakarta.
+
+Berikan panduan darurat dalam format JSON berikut (tanpa markdown, hanya JSON):
+{
+  "title": "judul singkat panduan (max 8 kata)",
+  "steps": [
+    "langkah 1 yang jelas dan konkret",
+    "langkah 2",
+    "langkah 3",
+    "langkah 4",
+    "langkah 5"
+  ]
+}
+
+Panduan harus: spesifik untuk waktu ${timeContext}, praktis, dapat dilakukan warga awam, dan mempertimbangkan konteks Indonesia.`;
+
+  const res = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + currentApiKey, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: { maxOutputTokens: 500, temperature: 0.3 }
+    })
+  });
+
+  if (!res.ok) throw new Error('API error: ' + res.status);
+  const data = await res.json();
+  const text = data.candidates[0].content.parts[0].text;
+  const cleaned = text.replace(/```json|```/g, '').trim();
+  return JSON.parse(cleaned);
+}
+
+function renderStaticSteps(emergency) {
+  const steps = emergency.staticSteps;
+  document.getElementById('aiGuideTitle').textContent = 'Panduan Cepat (Offline)';
+  document.getElementById('aiGuideContent').innerHTML = steps.map(s =>
+    `<div class="step"><span class="step-icon">${s.icon}</span><span class="step-text">${s.text}</span></div>`
+  ).join('');
+}
+
+function renderAiSteps(data) {
+  document.getElementById('aiGuideTitle').textContent = data.title;
+  document.getElementById('aiGuideContent').innerHTML = data.steps.map((s, i) =>
+    `<div class="step"><span class="step-num">${i+1}</span><span class="step-text">${s}</span></div>`
+  ).join('');
+}
+
+async function openEmergency(type) {
+  const emergency = EMERGENCY_DATA[type];
+  currentEmergency = emergency;
+
+  // Set modal content
+  document.getElementById('mTitle').textContent = emergency.label;
+  document.getElementById('mNumber').textContent = emergency.number;
+  document.getElementById('mNumber').style.color = emergency.color;
+
+  const iconWrap = document.getElementById('mIconWrap');
+  iconWrap.style.background = emergency.bgColor;
+  iconWrap.style.color = emergency.color;
+  document.getElementById('mIcon').innerHTML = emergency.iconPath;
+  document.getElementById('mIcon').style.stroke = emergency.color;
+
+  const callBtn = document.getElementById('mCallBtn');
+  callBtn.style.background = emergency.color;
+  callBtn.onclick = () => { location.href = emergency.tel; };
+
+  // Show loading
+  document.getElementById('aiGuideTitle').textContent = 'Memuat panduan AI...';
+  document.getElementById('aiGuideContent').innerHTML = `
+    <div class="ai-loading">
+      <div class="ai-loading-dots"><span></span><span></span><span></span></div>
+      <span>Menganalisis situasi darurat...</span>
+    </div>`;
+
+  // Show modal
+  document.getElementById('modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  // Fetch AI guide or fallback
+  if (currentApiKey) {
+    try {
+      const aiData = await fetchGeminiGuide(type, emergency);
+      renderAiSteps(aiData);
+    } catch (e) {
+      renderStaticSteps(emergency);
+      document.getElementById('aiGuideTitle').textContent = 'Panduan Cepat (AI tidak tersedia)';
+    }
+  } else {
+    setTimeout(() => renderStaticSteps(emergency), 600);
+  }
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal')) closeModal();
+}
+</script>
+</body>
+</html>
