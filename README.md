@@ -14,22 +14,23 @@
 >
 > Aplikasi ini mendemonstrasikan visi dan alur kerja GoRoyo dalam bentuk prototype interaktif satu halaman. **Pengembangan full app** membutuhkan waktu yang lebih panjang, tim pengembang, infrastruktur backend, dan investasi yang lebih besar.
 >
-> Nomor telepon, data petugas, dan informasi RT/RW yang tampil bersifat **ilustratif** dan bukan data nyata.
+> Data petugas, nomor RT/RW, dan informasi warga yang tampil bersifat **ilustratif** dan bukan data nyata.
 
 ---
 
 ## Tentang GoRoyo
 
-GoRoyo (singkatan dari **Gotong Royong**) adalah konsep platform tanggap darurat berbasis komunitas RT/RW Indonesia. Terinspirasi dari nilai gotong royong dan pengalaman nyata kerja di lapangan mitigasi bencana PMI.
+**GoRoyo** (singkatan dari **Gotong Royong**) adalah konsep platform tanggap darurat berbasis komunitas RT/RW Indonesia. Terinspirasi dari nilai gotong royong dan pengalaman nyata kerja di lapangan mitigasi bencana bersama PMI.
 
-**Masalah yang coba diselesaikan:**
+### Masalah yang Coba Diselesaikan
 - Warga kesulitan menghubungi petugas lokal saat darurat
-- Tidak ada panduan cepat yang kontekstual saat bencana
+- Tidak ada panduan cepat yang kontekstual saat bencana terjadi
 - Informasi pengumuman RT/RW tersebar tidak terstruktur
-- Koordinasi petugas siskamling masih manual
+- Koordinasi petugas siskamling masih manual dan lambat
+- Minimnya edukasi siaga bencana di level komunitas
 
-**Solusi:**
-Tombol darurat satu ketuk → notifikasi ke petugas lokal → panduan AI kontekstual → info petugas siaga.
+### Solusi
+Tombol darurat satu ketuk → panduan AI kontekstual via Gemini → notifikasi petugas lokal → edukasi offline → laporan warga → info komunitas RT/RW.
 
 ---
 
@@ -37,60 +38,113 @@ Tombol darurat satu ketuk → notifikasi ke petugas lokal → panduan AI konteks
 
 | Fitur | Deskripsi |
 |-------|-----------|
-| 🔴 Tombol Darurat | 6 kategori: Kebakaran, Banjir, Medis, Keamanan, Gas Bocor, Gempa |
-| 🤖 Panduan AI | Gemini 2.0 Flash generate panduan kontekstual berdasarkan jenis darurat & waktu kejadian |
-| 👮 Petugas Siaga | Status shift & kontak langsung 3 petugas siskamling |
-| 📢 Pengumuman | Papan informasi RT/RW dengan kategori |
-| 📱 PWA-ready | Responsif untuk mobile, bisa diakses offline (data statis) |
+| 🔴 **Tombol Darurat** | 6 kategori: Kebakaran, Banjir, Medis, Keamanan, Gas Bocor, Gempa |
+| 🤖 **Panduan AI** | Gemini 2.0 Flash generate panduan kontekstual berdasarkan jenis darurat & waktu kejadian |
+| 👮 **Petugas Siaga** | Status shift & kontak langsung 3 petugas siskamling |
+| 📢 **Pengumuman** | Papan informasi RT/RW dengan kategori |
+| 📋 **Laporan Warga** | Form laporan 6 kategori (anonim/terbuka) dengan riwayat laporan |
+| 📚 **Pusat Edukasi** | 9 panduan lengkap: CPR, APAR, banjir, gempa, DBD, rabies, dll — searchable |
+| 👤 **Profil & Nomor Darurat** | Info warga, lokasi RT/RW, dan semua nomor darurat Indonesia |
+| 📱 **Mobile-friendly** | Responsif untuk HP, dioptimalkan untuk penggunaan satu tangan |
 
 ---
 
 ## Teknologi
 
 ```
-Frontend   : HTML5 + CSS3 + Vanilla JavaScript
-AI         : Google Gemini 2.0 Flash API (via AI Studio)
+Frontend   : HTML5 + CSS3 + Vanilla JavaScript (single file, no framework)
+AI         : Google Gemini 2.0 Flash API (via Google AI Studio)
+Server     : Nginx (Alpine)
+Container  : Docker
+Deploy     : Google Cloud Run
 Font       : Plus Jakarta Sans + Syne (Google Fonts)
-Deploy     : GitHub Pages / Firebase Hosting
 ```
 
 ---
 
-## Cara Menjalankan Demo
+## Cara Menjalankan Secara Lokal
 
-### 1. Clone repository
+### Opsi 1 — Buka langsung di browser
 ```bash
-git clone https://github.com/[username]/goroyo.git
+# Clone repo
+git clone https://github.com/whddarmadi/goroyo.git
 cd goroyo
-```
 
-### 2. Buka di browser
-```bash
-# Langsung buka file
+# Buka di browser (Windows)
+start index.html
+
+# Buka di browser (Mac)
 open index.html
-
-# Atau gunakan live server (VS Code extension)
-# Atau Python simple server:
-python -m http.server 8000
 ```
 
-### 3. Aktifkan fitur AI (opsional)
-1. Kunjungi [aistudio.google.com](https://aistudio.google.com)
-2. Login dengan akun Google → klik **"Get API Key"**
-3. Salin API key (format: `AIzaSy...`)
-4. Masukkan di banner kuning di atas aplikasi → klik **Simpan**
-5. Sekarang setiap tombol darurat akan menghasilkan panduan AI yang kontekstual!
+### Opsi 2 — Pakai Docker (sama seperti di Cloud Run)
+```bash
+docker build -t goroyo .
+docker run -p 8080:8080 goroyo
+# Buka http://localhost:8080
+```
 
-> Tanpa API key, panduan statis offline tetap tersedia.
+### Aktifkan Fitur AI (Opsional tapi Direkomendasikan)
+1. Kunjungi [aistudio.google.com](https://aistudio.google.com)
+2. Login dengan akun Google → klik **"Get API Key"** → **"Create API key"**
+3. Salin API key (format: `AIzaSy...`)
+4. Masukkan di banner kuning dalam aplikasi → klik **Simpan**
+5. Setiap tombol darurat sekarang menghasilkan panduan AI yang kontekstual berdasarkan waktu kejadian!
+
+> Tanpa API key, panduan statis offline tetap tersedia untuk semua kategori darurat.
 
 ---
+
+## Deploy ke Google Cloud Run
+
+### Prasyarat
+- Akun Google Cloud dengan billing aktif / kredit JuaraVibeCoding
+- Docker terinstall di komputer
+- Google Cloud CLI (`gcloud`) terinstall
+
+### Langkah Deploy
+
+**1. Login dan setup project**
+```bash
+gcloud auth login
+gcloud config set project YOUR_PROJECT_ID
+```
+> Cek Project ID di [console.cloud.google.com](https://console.cloud.google.com) — pojok kiri atas
+
+**2. Aktifkan layanan yang dibutuhkan**
+```bash
+gcloud services enable run.googleapis.com
+gcloud services enable containerregistry.googleapis.com
+```
+
+**3. Build dan push Docker image**
+```bash
+# Ganti YOUR_PROJECT_ID dengan project ID kamu
+docker build -t gcr.io/YOUR_PROJECT_ID/goroyo .
+docker push gcr.io/YOUR_PROJECT_ID/goroyo
+```
+
+**4. Deploy ke Cloud Run**
+```bash
+gcloud run deploy goroyo \
+  --image gcr.io/YOUR_PROJECT_ID/goroyo \
+  --platform managed \
+  --region asia-southeast2 \
+  --allow-unauthenticated \
+  --port 8080 \
+  --memory 256Mi
+```
 
 ## Struktur Folder
 
 ```
 goroyo/
-├── index.html          # Aplikasi utama (single-file demo)
-└── README.md           # Dokumentasi ini
+├── index.html       ← Aplikasi utama (single-file PWA)
+├── Dockerfile       ← Container config untuk Cloud Run
+├── nginx.conf       ← Web server config (port 8080)
+├── deploy.sh        ← Script deploy otomatis
+├── README.md        ← Dokumentasi ini
+└── .gitignore
 ```
 
 ---
@@ -98,25 +152,39 @@ goroyo/
 ## Roadmap Pengembangan (Full App)
 
 ### MVP Lanjutan (3–6 bulan)
-- [ ] Sistem autentikasi warga & petugas (role-based)
-- [ ] Push notification real ke HP petugas (Firebase FCM)
-- [ ] Form laporan warga dengan foto & lokasi GPS
-- [ ] Pusat edukasi offline (PDF lokal: P3K, APAR, evakuasi)
-- [ ] Chat assistant berbasis keyword retrieval (offline-first)
+- [ ] Sistem autentikasi warga & petugas (role: warga / petugas / RT-RW / admin)
+- [ ] Push notification real ke HP petugas (Firebase Cloud Messaging)
+- [ ] Laporan warga tersimpan ke database (Firebase Firestore)
+- [ ] Chat assistant berbasis keyword retrieval (offline-first, tanpa LLM)
+- [ ] Peta mitigasi bencana (OpenStreetMap + Leaflet)
 
 ### V2 (6–12 bulan)
-- [ ] Peta mitigasi bencana (OpenStreetMap + Leaflet)
-- [ ] Transparansi keuangan RT/RW sederhana
-- [ ] Sistem shift & manajemen petugas
+- [ ] Transparansi keuangan RT/RW (iuran, CSR, hibah)
+- [ ] Sistem shift & manajemen jadwal petugas
 - [ ] Early Warning System (integrasi BMKG)
-- [ ] Mode Krisis (UI berubah otomatis saat bencana besar)
+- [ ] Mode Krisis (UI darurat otomatis saat bencana besar)
+- [ ] Gamifikasi petugas (badge & reward digital)
 
 ### V3 (12+ bulan)
 - [ ] Sistem ketahanan pangan RT (kebun, kolam lele, urban farming)
-- [ ] Gamifikasi petugas (badge & reward digital)
-- [ ] Dashboard statistik RT/RW
+- [ ] Dashboard statistik RT/RW untuk pengambilan keputusan
 - [ ] Sinkronisasi lintas RW & kelurahan
-- [ ] Integrasi BNPB, PMI, Basarnas
+- [ ] Integrasi BNPB, PMI, Basarnas untuk konten edukasi resmi
+- [ ] AI offline ringan untuk klasifikasi laporan warga
+
+---
+
+## Estimasi Biaya (Pilot Kecil, 1 RT)
+
+| Komponen | Biaya |
+|----------|-------|
+| Google Cloud Run (traffic rendah) | Gratis (free tier) |
+| Firebase Spark Plan | Gratis |
+| Gemini API (kuota gratis) | Gratis |
+| OpenStreetMap + Leaflet | Gratis |
+| **Total pilot awal** | **~Rp 0/bulan** |
+
+Biaya mulai muncul saat scaling ke ratusan RT atau menggunakan SMS gateway dan fitur AI intensif.
 
 ---
 
@@ -124,25 +192,21 @@ goroyo/
 
 ```
 ┌─────────────────────────────────────────────┐
-│              GoRoyo App                     │
+│              GoRoyo App (PWA)               │
 ├─────────────┬───────────────┬───────────────┤
 │   Warga     │   Petugas     │   RT/RW Admin │
-│  (Darurat,  │  (Dashboard,  │  (Pengumuman, │
-│  Laporan,   │   Status,     │   Keuangan,   │
-│  Edukasi)   │   Respon)     │   Statistik)  │
+│  Darurat,   │  Dashboard,   │  Pengumuman,  │
+│  Laporan,   │  Status,      │  Keuangan,    │
+│  Edukasi    │  Respon       │  Statistik    │
 └─────────────┴───────────────┴───────────────┘
-         │              │              │
-         ▼              ▼              ▼
-┌─────────────────────────────────────────────┐
-│            Firebase Backend                 │
-│  Firestore │ FCM │ Auth │ Hosting           │
-└─────────────────────────────────────────────┘
-         │
-         ▼
-┌─────────────────────────────────────────────┐
-│         Offline-First Layer                 │
-│  IndexedDB │ Local Knowledge │ Service Worker│
-└─────────────────────────────────────────────┘
+                     │
+         ┌───────────┴───────────┐
+         ▼                       ▼
+┌─────────────────┐   ┌─────────────────────┐
+│ Firebase Backend│   │   Offline-First     │
+│ Firestore + FCM │   │ IndexedDB + Cache   │
+│ Auth + Hosting  │   │ Knowledge Base PDF  │
+└─────────────────┘   └─────────────────────┘
          │
          ▼
 ┌─────────────────────────────────────────────┐
@@ -153,27 +217,13 @@ goroyo/
 
 ---
 
-## Estimasi Biaya (Pilot Kecil, 1 RT)
-
-| Komponen | Biaya |
-|----------|-------|
-| Firebase Spark Plan | Gratis |
-| GitHub Pages / Vercel | Gratis |
-| Gemini API (kuota gratis) | Gratis |
-| OpenStreetMap + Leaflet | Gratis |
-| **Total pilot awal** | **~Rp 0/bulan** |
-
-Biaya mulai muncul saat scaling ke ratusan RT atau menggunakan SMS gateway.
-
----
-
 ## Filosofi Desain
 
 GoRoyo dibangun dengan prinsip:
 
 - **Offline-first** — tetap berfungsi saat internet terbatas atau mati
 - **Hyperlocal** — berbasis kondisi nyata RT/RW setempat
-- **Lightweight** — berjalan di HP Android low-end
+- **Lightweight** — berjalan di HP Android low-end sekalipun
 - **Community-driven** — warga sebagai first responder, teknologi sebagai enabler
 - **Manusiawi** — bukan sekadar app darurat, tapi ekosistem gotong royong digital
 
@@ -182,16 +232,16 @@ GoRoyo dibangun dengan prinsip:
 ## Latar Belakang Pembuatan
 
 Dibuat dengan semangat pengalaman nyata di lapangan:
-- Latar belakang kerja di **Mitigasi Bencana PMI**
-- Keprihatinan terhadap minimnya sistem tanggap darurat di level RT/RW
-- Keyakinan bahwa teknologi sederhana bisa menyelamatkan nyawa
+- Latar belakang kerja di Mitigasi Bencana PMI
+- Keprihatinan terhadap minimnya sistem tanggap darurat di level RT/RW Indonesia
+- Keyakinan bahwa teknologi sederhana, lokal, dan manusiawi bisa menyelamatkan nyawa
 
 ---
 
 ## Kredit & Acknowledgment
 
-- Konsep dikembangkan dengan bantuan AI (ChatGPT, Google Gemini, Claude)
-- Panduan darurat dikembangkan berdasarkan standar PMI & BNPB
+- Konsep dikembangkan dengan bantuan AI (AI Studio, ChatGPT, Google Gemini, Claude)
+- Panduan darurat mengacu pada standar PMI, BNPB, dan Kemenkes RI
 - Dibuat untuk **#JuaraVibeCoding by Google** — event vibe coding komunitas Indonesia
 
 ---
@@ -204,9 +254,13 @@ MIT License — bebas digunakan, dimodifikasi, dan dikembangkan untuk kepentinga
 
 *GoRoyo — Karena dalam kedaruratan, tetangga adalah pertolongan pertama.*
 
+---
+
 ## 👤 Author
 
 **[Wahid S. Darmadi]**
 - GitHub: [@whddarmadi](https://github.com/whddarmadi)
 - LinkedIn: [linkedin.com/in/whddarmadi](https://linkedin.com/in/whddarmadi)
 - Instagram: [@wahwahcreative] (https://www.instagram.com/wahwahcreative/)
+
+---

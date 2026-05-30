@@ -432,6 +432,54 @@
   .demo-banner svg { width: 16px; height: 16px; color: #94A3B8; flex-shrink: 0; margin-top: 1px; }
   .demo-banner p { font-size: 11px; color: #64748B; line-height: 1.5; }
 
+  /* TAB PAGES */
+  .tab-page { display: none; padding-bottom: 90px; }
+  .tab-header { background: var(--primary); padding: 20px 20px 24px; }
+  .tab-title { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; color: white; margin-bottom: 4px; }
+  .tab-subtitle { font-size: 13px; color: rgba(255,255,255,0.75); }
+
+  /* REPORT */
+  .report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .report-cat-btn { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 16px 10px 14px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 6px; font-family: 'Plus Jakarta Sans', sans-serif; box-shadow: var(--shadow); transition: transform 0.1s; }
+  .report-cat-btn:active { transform: scale(0.97); }
+  .report-emoji { font-size: 28px; }
+  .report-label { font-size: 13px; font-weight: 700; color: var(--text); }
+  .report-sub { font-size: 10px; color: var(--text-muted); text-align: center; }
+  .form-label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .form-textarea { width: 100%; border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; font-size: 13px; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); resize: none; outline: none; background: var(--surface); }
+  .form-textarea:focus { border-color: var(--primary); background: white; }
+  .form-input { width: 100%; border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; font-size: 13px; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); outline: none; background: var(--surface); }
+  .form-input:focus { border-color: var(--primary); background: white; }
+  .anon-btn { flex: 1; padding: 8px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; background: var(--surface); color: var(--text-muted); cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .anon-btn.active { border-color: var(--primary); background: var(--primary-light); color: var(--primary); }
+
+  /* EDUCATION */
+  .edu-search { display: flex; align-items: center; gap: 10px; background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 10px 14px; margin-bottom: 4px; box-shadow: var(--shadow); }
+  .edu-search svg { width: 18px; height: 18px; color: var(--text-muted); flex-shrink: 0; }
+  .edu-search input { flex: 1; border: none; outline: none; font-size: 14px; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: transparent; }
+  .edu-card-list { display: flex; flex-direction: column; gap: 8px; }
+  .edu-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; display: flex; align-items: center; gap: 12px; cursor: pointer; box-shadow: var(--shadow); transition: transform 0.1s; }
+  .edu-card:active { transform: scale(0.98); }
+  .edu-icon { width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .edu-info { flex: 1; }
+  .edu-title { font-size: 13px; font-weight: 600; color: var(--text); }
+  .edu-desc { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .edu-arrow { width: 16px; height: 16px; color: var(--text-muted); flex-shrink: 0; }
+  .edu-steps { font-size: 13px; color: var(--text); line-height: 1.65; }
+  .edu-step { display: flex; gap: 10px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .edu-step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .edu-step-num { width: 24px; height: 24px; border-radius: 50%; background: var(--primary); color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .edu-warning { background: #FFFBEB; border: 1px solid #FDE68A; border-radius: var(--radius-sm); padding: 10px 12px; font-size: 12px; color: #92400E; margin-bottom: 12px; display: flex; gap: 8px; }
+
+  /* PROFILE */
+  .profile-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; display: flex; align-items: center; gap: 14px; margin: 16px 16px 0; box-shadow: var(--shadow); }
+  .profile-avatar { width: 54px; height: 54px; border-radius: 50%; background: var(--primary); color: white; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .profile-name { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+  .profile-role-badge { display: inline-flex; align-items: center; gap: 5px; background: var(--primary-light); color: var(--primary); font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+  .info-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  .info-label { font-size: 12px; color: var(--text-muted); }
+  .info-val { font-size: 13px; font-weight: 600; color: var(--text); }
+
   /* BOTTOM NAV */
   .bottom-nav {
     position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
@@ -665,31 +713,287 @@
 
 <!-- BOTTOM NAV -->
 <nav class="bottom-nav">
-  <button class="nav-item active">
+  <button class="nav-item active" id="nav-beranda" onclick="switchTab('beranda')">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
     </svg>
     <span>Beranda</span>
   </button>
-  <button class="nav-item">
+  <button class="nav-item" id="nav-laporan" onclick="switchTab('laporan')">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
     </svg>
     <span>Laporan</span>
   </button>
-  <button class="nav-item">
+  <button class="nav-item" id="nav-edukasi" onclick="switchTab('edukasi')">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
     </svg>
     <span>Edukasi</span>
   </button>
-  <button class="nav-item">
+  <button class="nav-item" id="nav-profil" onclick="switchTab('profil')">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
     </svg>
     <span>Profil</span>
   </button>
 </nav>
+
+<!-- ===================== TAB: LAPORAN ===================== -->
+<div id="tab-laporan" class="tab-page" style="display:none;">
+  <div class="tab-header">
+    <h1 class="tab-title">Laporan Warga</h1>
+    <p class="tab-subtitle">Laporkan masalah di lingkungan RT 009</p>
+  </div>
+  <div class="content">
+    <div class="section-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <h2>Pilih Kategori Laporan</h2>
+    </div>
+    <div class="report-grid">
+      <button class="report-cat-btn" onclick="openReportForm('Lingkungan','🌿')">
+        <span class="report-emoji">🌿</span>
+        <span class="report-label">Lingkungan</span>
+        <span class="report-sub">Sampah, drainase, polusi</span>
+      </button>
+      <button class="report-cat-btn" onclick="openReportForm('Infrastruktur','🔧')">
+        <span class="report-emoji">🔧</span>
+        <span class="report-label">Infrastruktur</span>
+        <span class="report-sub">Jalan, kabel, pohon</span>
+      </button>
+      <button class="report-cat-btn" onclick="openReportForm('Sosial','🤝')">
+        <span class="report-emoji">🤝</span>
+        <span class="report-label">Sosial</span>
+        <span class="report-sub">Warga butuh bantuan</span>
+      </button>
+      <button class="report-cat-btn" onclick="openReportForm('Keamanan','🔐')">
+        <span class="report-emoji">🔐</span>
+        <span class="report-label">Keamanan</span>
+        <span class="report-sub">Kriminal, narkoba</span>
+      </button>
+      <button class="report-cat-btn" onclick="openReportForm('Kesehatan','🏥')">
+        <span class="report-emoji">🏥</span>
+        <span class="report-label">Kesehatan</span>
+        <span class="report-sub">Penyakit, hama, wabah</span>
+      </button>
+      <button class="report-cat-btn" onclick="openReportForm('Lainnya','📋')">
+        <span class="report-emoji">📋</span>
+        <span class="report-label">Lainnya</span>
+        <span class="report-sub">Masalah lain</span>
+      </button>
+    </div>
+
+    <div class="section-head" style="margin-top:24px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <h2>Laporan Terbaru</h2>
+    </div>
+    <div class="announce-card">
+      <div class="announce-item">
+        <div class="announce-tags"><span class="tag tag-warning">Proses</span><span class="tag" style="background:#EDE9FE;color:#6D28D9">Infrastruktur</span></div>
+        <div class="announce-title">Kabel listrik menjuntai di depan Gang Mawar</div>
+        <div class="announce-meta">Warga RT 009 · 2 jam lalu · Anonim</div>
+      </div>
+      <div class="announce-item">
+        <div class="announce-tags"><span class="tag tag-event">Selesai</span><span class="tag" style="background:#DCFCE7;color:#166534">Lingkungan</span></div>
+        <div class="announce-title">Selokan depan no. 12 mampet dan bau</div>
+        <div class="announce-meta">Warga RT 009 · Kemarin · Anonim</div>
+      </div>
+      <div class="announce-item">
+        <div class="announce-tags"><span class="tag tag-warning">Proses</span><span class="tag" style="background:#FEE2E2;color:#991B1B">Sosial</span></div>
+        <div class="announce-title">Nenek Sariah (no. 7B) tinggal sendiri, butuh perhatian</div>
+        <div class="announce-meta">Warga RT 009 · 3 hari lalu · Terbuka</div>
+      </div>
+    </div>
+    <div class="demo-banner" style="margin:16px 0">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p><strong>Demo.</strong> Form laporan ini bersifat simulasi. Full app akan menyimpan laporan ke database dan notifikasi ke pengurus RT/RW.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== TAB: EDUKASI ===================== -->
+<div id="tab-edukasi" class="tab-page" style="display:none;">
+  <div class="tab-header">
+    <h1 class="tab-title">Pusat Edukasi</h1>
+    <p class="tab-subtitle">Panduan siaga untuk warga RT 009</p>
+  </div>
+  <div class="content">
+    <div class="edu-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" placeholder="Cari panduan, contoh: CPR, APAR, banjir..." id="eduSearch" oninput="filterEdu(this.value)">
+    </div>
+
+    <div id="eduList">
+      <div class="section-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><h2>Mitigasi Bencana</h2></div>
+      <div class="edu-card-list">
+        <div class="edu-card" onclick="openEduDetail('kebakaran')">
+          <span class="edu-icon" style="background:#FEF2F2;color:#DC2626">🔥</span>
+          <div class="edu-info"><div class="edu-title">Kebakaran Rumah</div><div class="edu-desc">Langkah awal dan evakuasi</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('banjir')">
+          <span class="edu-icon" style="background:#EFF6FF;color:#2563EB">🌊</span>
+          <div class="edu-info"><div class="edu-title">Banjir & Evakuasi</div><div class="edu-desc">Persiapan dan jalur evakuasi</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('gempa')">
+          <span class="edu-icon" style="background:#F5F3FF;color:#7C3AED">🌍</span>
+          <div class="edu-info"><div class="edu-title">Gempa Bumi</div><div class="edu-desc">Duck-Cover-Hold On</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('longsor')">
+          <span class="edu-icon" style="background:#FFF7ED;color:#C2410C">⛰️</span>
+          <div class="edu-info"><div class="edu-title">Tanah Longsor</div><div class="edu-desc">Tanda awal dan tindakan</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-top:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><h2>Pertolongan Pertama</h2></div>
+      <div class="edu-card-list">
+        <div class="edu-card" onclick="openEduDetail('cpr')">
+          <span class="edu-icon" style="background:#FEF2F2;color:#DC2626">❤️</span>
+          <div class="edu-info"><div class="edu-title">CPR Dasar</div><div class="edu-desc">Resusitasi jantung paru</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('apar')">
+          <span class="edu-icon" style="background:#FEF2F2;color:#DC2626">🧯</span>
+          <div class="edu-info"><div class="edu-title">Cara Pakai APAR</div><div class="edu-desc">Metode PASS</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('luka')">
+          <span class="edu-icon" style="background:#F0FDF4;color:#16A34A">🩹</span>
+          <div class="edu-info"><div class="edu-title">Pertolongan Luka</div><div class="edu-desc">Balut & hentikan perdarahan</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-top:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><h2>Kesehatan & Wabah</h2></div>
+      <div class="edu-card-list">
+        <div class="edu-card" onclick="openEduDetail('dbd')">
+          <span class="edu-icon" style="background:#FFFBEB;color:#D97706">🦟</span>
+          <div class="edu-info"><div class="edu-title">Pencegahan DBD</div><div class="edu-desc">3M Plus dan tanda bahaya</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('rabies')">
+          <span class="edu-icon" style="background:#F5F3FF;color:#7C3AED">🐕</span>
+          <div class="edu-info"><div class="edu-title">Gigitan Hewan Liar</div><div class="edu-desc">Rabies & tindakan awal</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== TAB: PROFIL ===================== -->
+<div id="tab-profil" class="tab-page" style="display:none;">
+  <div class="tab-header">
+    <h1 class="tab-title">Profil Saya</h1>
+    <p class="tab-subtitle">Warga RT 009 / RW 05 Cililitan</p>
+  </div>
+  <div class="content">
+    <div class="profile-card">
+      <div class="profile-avatar">WS</div>
+      <div class="profile-info">
+        <div class="profile-name">Wahid Setio Darmadi</div>
+        <div class="profile-role-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          Warga
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg><h2>Informasi Wilayah</h2></div>
+    <div class="officer-card">
+      <div class="info-row"><span class="info-label">RT / RW</span><span class="info-val">RT 009 / RW 05</span></div>
+      <div class="info-row"><span class="info-label">Kelurahan</span><span class="info-val">Cililitan</span></div>
+      <div class="info-row"><span class="info-label">Kecamatan</span><span class="info-val">Kramat Jati</span></div>
+      <div class="info-row"><span class="info-label">Kota</span><span class="info-val">Jakarta Timur</span></div>
+      <div class="info-row" style="border:none"><span class="info-label">Status</span><span class="info-val" style="color:var(--green);font-weight:600">✓ Terverifikasi</span></div>
+    </div>
+
+    <div class="section-head" style="margin-top:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg><h2>Nomor Darurat Penting</h2></div>
+    <div class="officer-card">
+      <div class="info-row"><span class="info-label">🚒 Damkar Jakarta</span><span class="info-val"><a href="tel:113" style="color:var(--red);font-weight:600;text-decoration:none">113</a></span></div>
+      <div class="info-row"><span class="info-label">🚑 Ambulans / IGD</span><span class="info-val"><a href="tel:119" style="color:var(--red);font-weight:600;text-decoration:none">119</a></span></div>
+      <div class="info-row"><span class="info-label">🚔 Polisi</span><span class="info-val"><a href="tel:110" style="color:var(--blue);font-weight:600;text-decoration:none">110</a></span></div>
+      <div class="info-row"><span class="info-label">🌊 BPBD Jakarta</span><span class="info-val"><a href="tel:119" style="color:var(--blue);font-weight:600;text-decoration:none">119</a></span></div>
+      <div class="info-row"><span class="info-label">🏔️ BNPB</span><span class="info-val"><a href="tel:117" style="color:var(--purple);font-weight:600;text-decoration:none">117</a></span></div>
+      <div class="info-row" style="border:none"><span class="info-label">⛽ Gas PGN</span><span class="info-val"><a href="tel:1600645" style="color:var(--green);font-weight:600;text-decoration:none">1 600 645</a></span></div>
+    </div>
+
+    <div class="section-head" style="margin-top:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg><h2>Tentang GoRoyo</h2></div>
+    <div class="officer-card">
+      <div class="info-row"><span class="info-label">Versi</span><span class="info-val">0.1 Demo</span></div>
+      <div class="info-row"><span class="info-label">Program</span><span class="info-val">#JuaraVibeCoding</span></div>
+      <div class="info-row" style="border:none"><span class="info-label">Konsep</span><span class="info-val">Gotong Royong Digital</span></div>
+    </div>
+
+    <div class="demo-banner" style="margin:16px 0">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <p><strong>Demo Konsep.</strong> Full app akan memiliki autentikasi warga, verifikasi KTP, dan role sistem untuk warga, petugas, dan pengurus RT/RW.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== MODAL: LAPORAN FORM ===================== -->
+<div class="modal-overlay" id="reportModal" onclick="handleReportOverlay(event)">
+  <div class="modal-sheet">
+    <div class="modal-drag"></div>
+    <div class="modal-header">
+      <div class="modal-icon-wrap" id="reportIconWrap" style="background:#EFF6FF;font-size:26px;display:flex;align-items:center;justify-content:center;">📋</div>
+      <div>
+        <div class="modal-title" id="reportTitle">Buat Laporan</div>
+        <div class="modal-number" style="color:var(--text-muted)" id="reportCat">Kategori</div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div style="margin-bottom:14px">
+        <label class="form-label">Deskripsi masalah</label>
+        <textarea class="form-textarea" id="reportDesc" placeholder="Jelaskan masalah yang kamu lihat secara singkat..." rows="3"></textarea>
+      </div>
+      <div style="margin-bottom:14px">
+        <label class="form-label">Lokasi kejadian</label>
+        <input class="form-input" type="text" id="reportLoc" placeholder="Contoh: Depan gang Mawar no. 5">
+      </div>
+      <div style="margin-bottom:14px">
+        <label class="form-label">Identitas pelapor</label>
+        <div style="display:flex;gap:10px">
+          <button class="anon-btn active" id="anonBtn" onclick="setAnon(true)">Anonim</button>
+          <button class="anon-btn" id="openBtn" onclick="setAnon(false)">Nama terbuka</button>
+        </div>
+      </div>
+      <div style="background:var(--green-light);border-radius:var(--radius-sm);padding:12px 14px;font-size:12px;color:#166534;display:flex;gap:8px;align-items:flex-start">
+        <span style="font-size:16px;flex-shrink:0">✅</span>
+        <span>Laporan akan diteruskan ke pengurus RT/RW dan petugas terkait. Terima kasih sudah peduli!</span>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-dismiss" onclick="closeReportModal()">Batal</button>
+      <button class="btn-call-now" style="background:var(--primary)" onclick="submitReport()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Kirim Laporan
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== MODAL: EDUKASI DETAIL ===================== -->
+<div class="modal-overlay" id="eduModal" onclick="handleEduOverlay(event)">
+  <div class="modal-sheet">
+    <div class="modal-drag"></div>
+    <div class="modal-header">
+      <div class="modal-icon-wrap" id="eduIconWrap" style="font-size:28px;display:flex;align-items:center;justify-content:center;"></div>
+      <div>
+        <div class="modal-title" id="eduModalTitle"></div>
+        <div class="modal-number" style="color:var(--text-muted)" id="eduModalSub"></div>
+      </div>
+    </div>
+    <div class="modal-body" id="eduModalBody"></div>
+    <div class="modal-actions">
+      <button class="btn-call-now" style="background:var(--primary);flex:1" onclick="closeEduModal()">Tutup</button>
+    </div>
+  </div>
+</div>
 
 <!-- EMERGENCY MODAL -->
 <div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
@@ -983,9 +1287,153 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-function handleOverlayClick(e) {
-  if (e.target === document.getElementById('modal')) closeModal();
+// ======= TAB SWITCHING =======
+function switchTab(tab) {
+  // Hide all pages
+  document.getElementById('tab-laporan').style.display = 'none';
+  document.getElementById('tab-edukasi').style.display = 'none';
+  document.getElementById('tab-profil').style.display = 'none';
+  const beranda = document.querySelector('.app-header').nextElementSibling;
+
+  // Toggle beranda content (api banner + main content)
+  const berandaEls = document.querySelectorAll('.app-header ~ *:not(.tab-page):not(.bottom-nav):not(.modal-overlay)');
+  berandaEls.forEach(el => el.style.display = tab === 'beranda' ? '' : 'none');
+
+  // Show selected tab
+  if (tab !== 'beranda') {
+    document.getElementById('tab-' + tab).style.display = 'block';
+  }
+
+  // Update nav active state
+  ['beranda','laporan','edukasi','profil'].forEach(t => {
+    document.getElementById('nav-' + t).classList.toggle('active', t === tab);
+  });
+
+  window.scrollTo(0, 0);
 }
+
+// ======= REPORT MODAL =======
+let isAnon = true;
+
+function openReportForm(cat, emoji) {
+  document.getElementById('reportTitle').textContent = 'Laporan ' + cat;
+  document.getElementById('reportCat').textContent = emoji + ' ' + cat;
+  document.getElementById('reportIconWrap').textContent = emoji;
+  document.getElementById('reportDesc').value = '';
+  document.getElementById('reportLoc').value = '';
+  setAnon(true);
+  document.getElementById('reportModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function setAnon(val) {
+  isAnon = val;
+  document.getElementById('anonBtn').classList.toggle('active', val);
+  document.getElementById('openBtn').classList.toggle('active', !val);
+}
+
+function submitReport() {
+  const desc = document.getElementById('reportDesc').value.trim();
+  const loc = document.getElementById('reportLoc').value.trim();
+  if (!desc) { alert('Mohon isi deskripsi masalah terlebih dahulu.'); return; }
+  if (!loc)  { alert('Mohon isi lokasi kejadian.'); return; }
+  closeReportModal();
+  setTimeout(() => {
+    alert('✅ Laporan berhasil dikirim!\n\nNotifikasi telah diteruskan ke pengurus RT/RW. Terima kasih sudah peduli dengan lingkungan!');
+  }, 300);
+}
+
+function closeReportModal() {
+  document.getElementById('reportModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function handleReportOverlay(e) {
+  if (e.target === document.getElementById('reportModal')) closeReportModal();
+}
+
+// ======= EDUCATION MODAL =======
+const EDU_CONTENT = {
+  kebakaran: {
+    icon: '🔥', bg: '#FEF2F2', title: 'Kebakaran Rumah', sub: 'Mitigasi & Evakuasi',
+    warning: '⚠️ Jika api sudah besar dan menyebar, JANGAN coba padamkan sendiri. Selamatkan jiwa dulu!',
+    steps: ['Teriak "KEBAKARAN!" sekeras mungkin untuk membangunkan warga sekitar','Matikan MCB listrik utama sebelum meninggalkan rumah','Gunakan APAR dengan metode PASS: Pull, Aim, Squeeze, Sweep — hanya jika api masih kecil','Evakuasi semua penghuni lewat jalur aman — jangan gunakan lift','Tutup pintu (jangan dikunci) untuk memperlambat penyebaran api','Kumpul di titik aman — Mushola RT 009, jauhi bangunan']
+  },
+  banjir: {
+    icon: '🌊', bg: '#EFF6FF', title: 'Banjir & Evakuasi', sub: 'Persiapan & Jalur Aman',
+    warning: '⚠️ Jangan berjalan di air banjir — bisa ada arus kuat atau kabel listrik tersembunyi.',
+    steps: ['Pantau informasi BMKG dan grup RT untuk update ketinggian air','Pindahkan dokumen penting, elektronik, dan barang berharga ke tempat tinggi','Matikan listrik dari MCB utama dan cabut semua perangkat elektronik','Siapkan tas evakuasi: air minum, obat, senter, dokumen, uang tunai','Evakuasi ke titik kumpul RT — ikuti arahan petugas siskamling','Hubungi BPBD 119 jika banjir meluas atau butuh bantuan evakuasi']
+  },
+  gempa: {
+    icon: '🌍', bg: '#F5F3FF', title: 'Gempa Bumi', sub: 'Duck - Cover - Hold On',
+    warning: '⚠️ Waspada gempa susulan setelah guncangan pertama berhenti.',
+    steps: ['DUCK: Segera berlutut dan lindungi kepala dengan tangan','COVER: Berlindung di bawah meja kuat atau di sudut dalam tembok','HOLD ON: Pegang erat dan tunggu sampai guncangan benar-benar berhenti','Setelah aman: keluar perlahan lewat tangga — jauhi kaca, lemari, dan benda berat','Kumpul di area terbuka jauh dari bangunan, pohon, dan kabel listrik','Hubungi BNPB 117 dan periksa kondisi warga sekitar']
+  },
+  longsor: {
+    icon: '⛰️', bg: '#FFF7ED', title: 'Tanah Longsor', sub: 'Tanda Awal & Tindakan',
+    warning: '⚠️ Tanda awal longsor: tanah retak, pintu susah ditutup, air sumur keruh mendadak, pohon miring.',
+    steps: ['Kenali tanda awal: retakan tanah, suara gemuruh, air sumur tiba-tiba keruh','Segera evakuasi ke tempat yang lebih tinggi dan aman','Hubungi petugas RT dan BPBD 119 segera','Jauhi lereng, tebing, dan bantaran sungai saat hujan deras','Jangan kembali ke rumah sebelum dinyatakan aman oleh petugas','Bantu tetangga — terutama lansia dan anak-anak — untuk evakuasi']
+  },
+  cpr: {
+    icon: '❤️', bg: '#FEF2F2', title: 'CPR Dasar', sub: 'Resusitasi Jantung Paru',
+    warning: '⚠️ Hubungi 119 SEBELUM atau SAAT melakukan CPR. CPR hanya menggantikan sementara.',
+    steps: ['Pastikan lingkungan aman, lalu cek respons korban — tepuk bahu dan panggil namanya','Jika tidak sadar dan tidak bernapas normal: minta orang sekitar hubungi 119','Posisikan korban terlentang di permukaan keras dan datar','Lakukan kompresi dada: tumpuk kedua tangan di tengah dada, tekan 5–6 cm, 100–120 kali/menit','Setelah 30 kompresi, berikan 2 napas buatan (jika terlatih)','Ulangi siklus 30:2 sampai bantuan medis tiba atau korban sadar']
+  },
+  apar: {
+    icon: '🧯', bg: '#FEF2F2', title: 'Cara Pakai APAR', sub: 'Metode PASS',
+    warning: '⚠️ Gunakan APAR HANYA jika api masih kecil, jalur keluar aman, dan kamu tidak sendirian.',
+    steps: ['P — PULL: Cabut pin pengaman di pegangan APAR','A — AIM: Arahkan selang ke pangkal api (bukan ke asap/nyala di atas)','S — SQUEEZE: Tekan tuas/handle untuk menyemprotkan pemadam','S — SWEEP: Gerakkan selang dari sisi ke sisi menyapu pangkal api','Tetap waspada — api bisa menyala kembali','Jika APAR habis dan api belum padam: KELUAR segera, hubungi 113']
+  },
+  luka: {
+    icon: '🩹', bg: '#F0FDF4', title: 'Pertolongan Luka', sub: 'Balut & Hentikan Perdarahan',
+    warning: '⚠️ Untuk luka dalam, tusukan, atau perdarahan tidak berhenti dalam 10 menit — segera ke IGD.',
+    steps: ['Cuci tangan atau gunakan sarung tangan sekali pakai sebelum membantu','Bersihkan luka dengan air mengalir bersih selama 1–2 menit','Tekan luka dengan kain bersih/kasa steril untuk hentikan perdarahan','Angkat bagian yang terluka lebih tinggi dari jantung jika memungkinkan','Tutup dengan perban bersih — jangan terlalu ketat','Segera bawa ke IGD jika luka dalam, kotor, atau akibat gigitan hewan']
+  },
+  dbd: {
+    icon: '🦟', bg: '#FFFBEB', title: 'Pencegahan DBD', sub: '3M Plus & Tanda Bahaya',
+    warning: '⚠️ Segera ke dokter jika demam tinggi 2–7 hari, terutama disertai nyeri sendi atau bintik merah.',
+    steps: ['3M Plus: Menguras bak mandi tiap minggu, Menutup tempat penampungan air, Mendaur ulang barang bekas','Plus: Gunakan lotion anti nyamuk, pasang kawat kasa, tidur pakai kelambu','Pantau jentik nyamuk di tempat penampungan air — laporkan ke RT jika ada','Ikuti jadwal fogging dari kelurahan dan dinas kesehatan','Tanda bahaya DBD: demam mendadak, nyeri di balik mata, bintik perdarahan','Hubungi puskesmas atau IGD segera jika muncul gejala mencurigakan']
+  },
+  rabies: {
+    icon: '🐕', bg: '#F5F3FF', title: 'Gigitan Hewan Liar', sub: 'Rabies & Tindakan Awal',
+    warning: '⚠️ Rabies SANGAT berbahaya. Segera ke puskesmas/RS untuk vaksin anti-rabies, jangan tunda!',
+    steps: ['Cuci luka gigitan dengan air mengalir dan sabun selama minimal 15 menit','Berikan antiseptik (betadine/alkohol 70%) pada luka','SEGERA ke puskesmas atau IGD untuk mendapat Vaksin Anti Rabies (VAR)','Laporkan kejadian ke petugas RT — hewan liar perlu ditangani','Jangan dekati anjing/kucing/monyet liar yang berkeliaran','Hubungi Dinas Peternakan atau BKSDA jika ada hewan liar di lingkungan']
+  }
+};
+
+function openEduDetail(key) {
+  const d = EDU_CONTENT[key];
+  if (!d) return;
+  document.getElementById('eduIconWrap').textContent = d.icon;
+  document.getElementById('eduIconWrap').style.background = d.bg;
+  document.getElementById('eduModalTitle').textContent = d.title;
+  document.getElementById('eduModalSub').textContent = d.sub;
+  document.getElementById('eduModalBody').innerHTML = `
+    <div class="edu-warning">${d.warning}</div>
+    <div class="edu-steps">
+      ${d.steps.map((s,i) => `<div class="edu-step"><span class="edu-step-num">${i+1}</span><span>${s}</span></div>`).join('')}
+    </div>`;
+  document.getElementById('eduModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeEduModal() {
+  document.getElementById('eduModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function handleEduOverlay(e) {
+  if (e.target === document.getElementById('eduModal')) closeEduModal();
+}
+
+function filterEdu(q) {
+  const lower = q.toLowerCase();
+  document.querySelectorAll('.edu-card').forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(lower) ? '' : 'none';
+  });
+}
+
 </script>
 </body>
 </html>
