@@ -5,6 +5,9 @@
 ![Demo Badge](https://img.shields.io/badge/status-demo%20konsep-orange)
 ![JuaraVibeCoding](https://img.shields.io/badge/%23JuaraVibeCoding-Google-4285F4)
 ![License](https://img.shields.io/badge/license-MIT-green)
+![Cloud Run](https://img.shields.io/badge/deploy-Cloud%20Run-4285F4?logo=googlecloud)
+
+🌐 **Live Demo:** [nginx-app-596656023692.asia-southeast2.run.app](https://nginx-app-596656023692.asia-southeast2.run.app)
 
 ---
 
@@ -38,13 +41,15 @@ Tombol darurat satu ketuk → panduan AI kontekstual via Gemini → notifikasi p
 
 | Fitur | Deskripsi |
 |-------|-----------|
-| 🔴 **Tombol Darurat** | 6 kategori: Kebakaran, Banjir, Medis, Keamanan, Gas Bocor, Gempa |
+| 🔴 **Tombol Darurat** | 8 kategori: Kebakaran, Banjir, Medis, Keamanan, Gas Bocor, Gempa, Listrik PLN, Konsultasi Psikologis |
 | 🤖 **Panduan AI** | Gemini 2.0 Flash generate panduan kontekstual berdasarkan jenis darurat & waktu kejadian |
 | 👮 **Petugas Siaga** | Status shift & kontak langsung 3 petugas siskamling |
 | 📢 **Pengumuman** | Papan informasi RT/RW dengan kategori |
 | 📋 **Laporan Warga** | Form laporan 6 kategori (anonim/terbuka) dengan riwayat laporan |
-| 📚 **Pusat Edukasi** | 9 panduan lengkap: CPR, APAR, banjir, gempa, DBD, rabies, dll — searchable |
-| 👤 **Profil & Nomor Darurat** | Info warga, lokasi RT/RW, dan semua nomor darurat Indonesia |
+| 📚 **Pusat Edukasi** | 13 panduan lengkap: CPR, APAR, banjir, gempa, DBD, rabies, urban farming, dll — searchable |
+| 🌱 **Urban Farming RT** | 4 panduan ketahanan pangan: sayur pekarangan, kompos dapur, budikdamber lele, apotek hidup |
+| 🧠 **Kesehatan Mental** | Tombol akses cepat ke layanan psikologis Puskesmas Kecamatan |
+| 👤 **Profil & Nomor Darurat** | Info warga, lokasi RT/RW, 8 nomor darurat lengkap termasuk PLN, PMI, dan Puskesmas |
 | 📱 **Mobile-friendly** | Responsif untuk HP, dioptimalkan untuk penggunaan satu tangan |
 
 ---
@@ -56,8 +61,8 @@ Frontend   : HTML5 + CSS3 + Vanilla JavaScript (single file, no framework)
 AI         : Google Gemini 2.0 Flash API (via Google AI Studio)
 Server     : Nginx (Alpine)
 Container  : Docker
-Deploy     : Google Cloud Run
-Font       : Plus Jakarta Sans + Syne (Google Fonts)
+Deploy     : Google Cloud Run (asia-southeast2 / Jakarta)
+Font       : Plus Jakarta Sans + Urbanist (Google Fonts)
 ```
 
 ---
@@ -166,7 +171,7 @@ goroyo/
 - [ ] Gamifikasi petugas (badge & reward digital)
 
 ### V3 (12+ bulan)
-- [ ] Sistem ketahanan pangan RT (kebun, kolam lele, urban farming)
+- [x] ~~Sistem ketahanan pangan RT (kebun, kolam lele, urban farming)~~ ✅ Sudah ada di Pusat Edukasi
 - [ ] Dashboard statistik RT/RW untuk pengambilan keputusan
 - [ ] Sinkronisasi lintas RW & kelurahan
 - [ ] Integrasi BNPB, PMI, Basarnas untuk konten edukasi resmi
@@ -240,7 +245,7 @@ Dibuat dengan semangat pengalaman nyata di lapangan:
 
 ## Kredit & Acknowledgment
 
-- Konsep dikembangkan dengan bantuan AI (AI Studio, ChatGPT, Google Gemini, Claude)
+- Konsep dikembangkan dengan bantuan AI (AI Studio, Antigravity, ChatGPT, Google Gemini, Claude)
 - Panduan darurat mengacu pada standar PMI, BNPB, dan Kemenkes RI
 - Dibuat untuk **#JuaraVibeCoding by Google** — event vibe coding komunitas Indonesia
 
@@ -252,7 +257,7 @@ MIT License — bebas digunakan, dimodifikasi, dan dikembangkan untuk kepentinga
 
 ---
 
-*GoRoyo — Karena dalam kedaruratan, tetangga adalah pertolongan pertama.*
+*GoRoyo — Karena dalam kedaruratan, tetangga adalah andalan pertama.*
 
 ---
 
@@ -261,6 +266,6 @@ MIT License — bebas digunakan, dimodifikasi, dan dikembangkan untuk kepentinga
 **[Wahid S. Darmadi]**
 - GitHub: [@whddarmadi](https://github.com/whddarmadi)
 - LinkedIn: [linkedin.com/in/whddarmadi](https://linkedin.com/in/whddarmadi)
-- Instagram: [@wahwahcreative] (https://www.instagram.com/wahwahcreative/)
+- Instagram: [@wahwahcreative](https://www.instagram.com/wahwahcreative/)
 
 ---

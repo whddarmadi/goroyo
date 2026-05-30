@@ -7,7 +7,7 @@
 <title>GoRoyo — Sistem Tanggap Cepat Berbasis Warga</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Urbanist:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --primary: #1B4FD8;
@@ -80,11 +80,11 @@
   }
   .logo-icon svg { width: 22px; height: 22px; }
   .logo-text {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 900;
     color: white;
-    letter-spacing: -0.5px;
+    letter-spacing: 0px;
   }
   .logo-text span { color: #FCD34D; }
   .header-badge {
@@ -435,7 +435,7 @@
   /* TAB PAGES */
   .tab-page { display: none; padding-bottom: 90px; }
   .tab-header { background: var(--primary); padding: 20px 20px 24px; }
-  .tab-title { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; color: white; margin-bottom: 4px; }
+  .tab-title { font-family: 'Urbanist', sans-serif; font-size: 24px; font-weight: 900; color: white; margin-bottom: 4px; letter-spacing: -0.3px; }
   .tab-subtitle { font-size: 13px; color: rgba(255,255,255,0.75); }
 
   /* REPORT */
@@ -612,6 +612,26 @@
       <span class="e-num">117 BNPB</span>
     </button>
 
+    <button class="btn-emergency e-amber" onclick="openEmergency('listrik')">
+      <div class="e-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+      </div>
+      <span class="e-label">Listrik PLN</span>
+      <span class="e-num">123 PLN</span>
+    </button>
+
+    <button class="btn-emergency e-teal" onclick="openEmergency('psikologis')">
+      <div class="e-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/><circle cx="12" cy="12" r="2"/>
+        </svg>
+      </div>
+      <span class="e-label">Psikologis</span>
+      <span class="e-num">Puskesmas</span>
+    </button>
+
   </div>
 
   <!-- PETUGAS SECTION -->
@@ -630,11 +650,11 @@
     <div class="officer-row">
       <div class="officer-avatar av-green">PH</div>
       <div class="officer-info">
-        <div class="officer-name">Pak Hendra</div>
-        <div class="officer-role">Ketua Pos · Marbot Mushola Al-Ikhlas</div>
+        <div class="officer-name">Ustad Subhan</div>
+        <div class="officer-role">Marbot Mushola Al-Ikhlas · K3</div>
       </div>
       <span class="status-pill pill-on">Bertugas</span>
-      <button class="call-pill" onclick="location.href='tel:08121234567'" aria-label="Hubungi Pak Hendra">
+      <button class="call-pill" onclick="location.href='tel:08121234567'" aria-label="Hubungi Ust Subhan">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
         </svg>
@@ -643,11 +663,11 @@
     <div class="officer-row">
       <div class="officer-avatar av-blue">BS</div>
       <div class="officer-info">
-        <div class="officer-name">Budi Santoso</div>
-        <div class="officer-role">Petugas · Kendaraan Siaga</div>
+        <div class="officer-name">Pak Jono</div>
+        <div class="officer-role">Ketua RT · Kendaraan Siaga</div>
       </div>
       <span class="status-pill pill-on">Bertugas</span>
-      <button class="call-pill" onclick="location.href='tel:08129876543'" aria-label="Hubungi Budi Santoso">
+      <button class="call-pill" onclick="location.href='tel:08129876543'" aria-label="Hubungi Pak Jono">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
         </svg>
@@ -656,11 +676,11 @@
     <div class="officer-row">
       <div class="officer-avatar av-amber">RD</div>
       <div class="officer-info">
-        <div class="officer-name">Rudi Dermawan</div>
-        <div class="officer-role">Petugas Cadangan · K3</div>
+        <div class="officer-name">Bu Ella</div>
+        <div class="officer-role">PKK · Petugas Cadangan</div>
       </div>
       <span class="status-pill pill-off">Libur</span>
-      <button class="call-pill disabled" aria-label="Rudi sedang libur" disabled>
+      <button class="call-pill disabled" aria-label="Bu Ella sedang libur" disabled>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
         </svg>
@@ -682,7 +702,7 @@
         <span class="tag tag-warning">Penting</span>
         <span class="tag tag-info">Lingkungan</span>
       </div>
-      <div class="announce-title">Waspada musim hujan — siaga banjir RT 009</div>
+      <div class="announce-title">Waspada Cuaca Ekstrim — Siaga Banjir RT 009</div>
       <div class="announce-meta">RT 009 / RW 05 · Hari ini, 08.30 WIB</div>
     </div>
     <div class="announce-item">
@@ -696,7 +716,7 @@
       <div class="announce-tags">
         <span class="tag tag-health">Kesehatan</span>
       </div>
-      <div class="announce-title">Jadwal posyandu balita — Jumat, 30 Mei 2026</div>
+      <div class="announce-title">Jadwal Posyandu Balita — Jumat, 30 Mei 2026</div>
       <div class="announce-meta">Ibu PKK RW 05 · 2 hari lalu</div>
     </div>
   </div>
@@ -790,17 +810,17 @@
     <div class="announce-card">
       <div class="announce-item">
         <div class="announce-tags"><span class="tag tag-warning">Proses</span><span class="tag" style="background:#EDE9FE;color:#6D28D9">Infrastruktur</span></div>
-        <div class="announce-title">Kabel listrik menjuntai di depan Gang Mawar</div>
+        <div class="announce-title">Kabel listrik menjuntai di depan Gang Haji Ijo</div>
         <div class="announce-meta">Warga RT 009 · 2 jam lalu · Anonim</div>
       </div>
       <div class="announce-item">
         <div class="announce-tags"><span class="tag tag-event">Selesai</span><span class="tag" style="background:#DCFCE7;color:#166534">Lingkungan</span></div>
-        <div class="announce-title">Selokan depan no. 12 mampet dan bau</div>
+        <div class="announce-title">Selokan depan Gang Haji Izi no. 12 mampet dan bau</div>
         <div class="announce-meta">Warga RT 009 · Kemarin · Anonim</div>
       </div>
       <div class="announce-item">
         <div class="announce-tags"><span class="tag tag-warning">Proses</span><span class="tag" style="background:#FEE2E2;color:#991B1B">Sosial</span></div>
-        <div class="announce-title">Nenek Sariah (no. 7B) tinggal sendiri, butuh perhatian</div>
+        <div class="announce-title">Nenek Minah (no. 7B) tinggal sendiri, butuh perhatian</div>
         <div class="announce-meta">Warga RT 009 · 3 hari lalu · Terbuka</div>
       </div>
     </div>
@@ -880,6 +900,30 @@
           <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
       </div>
+
+      <div class="section-head" style="margin-top:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 00-6.88 17.28C6.51 20.63 9.2 22 12 22s5.49-1.37 6.88-2.72A10 10 0 0012 2z"/><path d="M12 8v8M8 12h8"/></svg><h2>Urban Farming RT</h2></div>
+      <div class="edu-card-list">
+        <div class="edu-card" onclick="openEduDetail('sayur')">
+          <span class="edu-icon" style="background:#F0FDF4;color:#16A34A">🥬</span>
+          <div class="edu-info"><div class="edu-title">Sayur di Pekarangan</div><div class="edu-desc">Tanam di lahan sempit & pot</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('pupuk')">
+          <span class="edu-icon" style="background:#FFF7ED;color:#C2410C">♻️</span>
+          <div class="edu-info"><div class="edu-title">Pupuk dari Limbah Dapur</div><div class="edu-desc">Kompos dari sampah organik</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('lele')">
+          <span class="edu-icon" style="background:#EFF6FF;color:#2563EB">🐟</span>
+          <div class="edu-info"><div class="edu-title">Lele dalam Ember (Budikdamber)</div><div class="edu-desc">Budidaya ikan di rumah</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('tanamanobat')">
+          <span class="edu-icon" style="background:#F0FDFA;color:#0D9488">🌿</span>
+          <div class="edu-info"><div class="edu-title">Tanaman Konsumsi & Apotek Hidup</div><div class="edu-desc">Daftar tanaman serbaguna</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -892,12 +936,18 @@
   </div>
   <div class="content">
     <div class="profile-card">
-      <div class="profile-avatar">WS</div>
+      <div class="profile-avatar">WD</div>
       <div class="profile-info">
-        <div class="profile-name">Wahid Setio Darmadi</div>
-        <div class="profile-role-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-          Warga
+        <div class="profile-name">Wahid Darmadi</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
+          <div class="profile-role-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            Warga
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:5px;background:#FEF3C7;color:#92400E;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+            Penerima Bantuan
+          </div>
         </div>
       </div>
     </div>
@@ -918,7 +968,10 @@
       <div class="info-row"><span class="info-label">🚔 Polisi</span><span class="info-val"><a href="tel:110" style="color:var(--blue);font-weight:600;text-decoration:none">110</a></span></div>
       <div class="info-row"><span class="info-label">🌊 BPBD Jakarta</span><span class="info-val"><a href="tel:119" style="color:var(--blue);font-weight:600;text-decoration:none">119</a></span></div>
       <div class="info-row"><span class="info-label">🏔️ BNPB</span><span class="info-val"><a href="tel:117" style="color:var(--purple);font-weight:600;text-decoration:none">117</a></span></div>
-      <div class="info-row" style="border:none"><span class="info-label">⛽ Gas PGN</span><span class="info-val"><a href="tel:1600645" style="color:var(--green);font-weight:600;text-decoration:none">1 600 645</a></span></div>
+      <div class="info-row"><span class="info-label">⛽ Gas PGN</span><span class="info-val"><a href="tel:1600645" style="color:var(--green);font-weight:600;text-decoration:none">1 600 645</a></span></div>
+      <div class="info-row"><span class="info-label">⚡ PLN 24 Jam</span><span class="info-val"><a href="tel:123" style="color:var(--amber);font-weight:600;text-decoration:none">123</a></span></div>
+      <div class="info-row"><span class="info-label">🧠 Puskesmas Kramat Jati</span><span class="info-val"><a href="tel:021-8093658" style="color:var(--teal);font-weight:600;text-decoration:none">021-8093658</a></span></div>
+      <div class="info-row" style="border:none"><span class="info-label">🩸 Bank Darah PMI Jakarta</span><span class="info-val"><a href="tel:021-3906666" style="color:#DC2626;font-weight:600;text-decoration:none">021-3906666</a></span></div>
     </div>
 
     <div class="section-head" style="margin-top:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg><h2>Tentang GoRoyo</h2></div>
@@ -996,7 +1049,7 @@
 </div>
 
 <!-- EMERGENCY MODAL -->
-<div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal-sheet">
     <div class="modal-drag"></div>
     <div class="modal-header">
@@ -1032,17 +1085,17 @@
         <div class="notify-title">Notifikasi Otomatis Dikirim ke</div>
         <div class="notify-row">
           <div class="notify-dot"></div>
-          <span class="notify-name">Pak Hendra (Ketua Pos)</span>
+          <span class="notify-name">Ustad Subhan (Marbot)</span>
           <span class="notify-status">✓ Terkirim</span>
         </div>
         <div class="notify-row">
           <div class="notify-dot"></div>
-          <span class="notify-name">Budi Santoso (Kendaraan)</span>
+          <span class="notify-name">Pak Jono (Kendaraan)</span>
           <span class="notify-status">✓ Terkirim</span>
         </div>
         <div class="notify-row">
           <div class="notify-dot off"></div>
-          <span class="notify-name">Rudi Dermawan (Cadangan)</span>
+          <span class="notify-name">Bu Ella (Cadangan)</span>
           <span class="notify-status">Sedang libur</span>
         </div>
       </div>
@@ -1105,7 +1158,7 @@ const EMERGENCY_DATA = {
       { icon: '🛑', text: 'Jangan pindahkan korban kecuali dalam bahaya langsung' },
       { icon: '🚑', text: 'Hubungi 119 segera — sampaikan lokasi dan kondisi' },
       { icon: '🩹', text: 'Lakukan pertolongan pertama sesuai kondisi (CPR jika perlu)' },
-      { icon: '🚗', text: 'Hubungi Budi Santoso untuk kendaraan antar ke RS' }
+      { icon: '🚗', text: 'Hubungi Pak Jono untuk antar ke RS dengan kendaraan!' }
     ],
     aiPrompt: 'Kedaruratan medis di lingkungan RT/RW Indonesia'
   },
@@ -1153,9 +1206,41 @@ const EMERGENCY_DATA = {
       { icon: '🤚', text: 'COVER — lindungi kepala dan leher dengan tangan' },
       { icon: '🛑', text: 'HOLD ON — pegang erat sampai guncangan berhenti' },
       { icon: '🚪', text: 'Keluar lewat tangga darurat — jauhi kaca dan benda jatuh' },
-      { icon: '🕌', text: 'Kumpul di titik evakuasi — Mushola RT 009 Cililitan' }
+      { icon: '🕌', text: 'Kumpul di titik evakuasi — Mushola Al-Ikhlas RT 009 Cililitan' }
     ],
     aiPrompt: 'Tindakan darurat saat gempa bumi di Indonesia'
+  },
+  listrik: {
+    label: 'Gangguan Listrik',
+    number: '123 — PLN 24 Jam',
+    tel: 'tel:123',
+    color: '#D97706',
+    bgColor: '#FFFBEB',
+    iconPath: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+    staticSteps: [
+      { icon: '🔌', text: 'Cabut semua peralatan elektronik penting dari stop kontak' },
+      { icon: '🕯️', text: 'Siapkan senter atau lilin — jangan gunakan api terbuka dekat gas' },
+      { icon: '📞', text: 'Hubungi PLN 123 — sampaikan alamat lengkap dan keluhan' },
+      { icon: '⚡', text: 'Jika ada kabel putus atau percikan api, jauhi dan laporkan segera' },
+      { icon: '🔐', text: 'Pastikan MCB tidak trip — coba reset dari kotak panel listrik' }
+    ],
+    aiPrompt: 'Gangguan listrik atau pemadaman di kawasan padat penduduk Indonesia'
+  },
+  psikologis: {
+    label: 'Konsultasi Psikologis',
+    number: 'Puskesmas Kramat Jati',
+    tel: 'tel:021-8093658',
+    color: '#0D9488',
+    bgColor: '#F0FDFA',
+    iconPath: '<path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/><circle cx="12" cy="12" r="2"/>',
+    staticSteps: [
+      { icon: '💬', text: 'Tidak apa-apa untuk merasa tidak baik-baik saja — kamu tidak sendirian' },
+      { icon: '🏥', text: 'Kunjungi Puskesmas Kec. Kramat Jati — ada layanan kesehatan jiwa gratis' },
+      { icon: '📞', text: 'Hubungi Into The Light Indonesia: 119 ext 8 untuk konsultasi krisis' },
+      { icon: '👥', text: 'Ceritakan perasaanmu ke orang terpercaya — keluarga, teman, atau pengurus RT' },
+      { icon: '🧘', text: 'Tarik napas dalam perlahan: hirup 4 detik, tahan 4 detik, hembuskan 6 detik' }
+    ],
+    aiPrompt: 'Dukungan kesehatan mental dan psikologis untuk warga komunitas Indonesia'
   }
 };
 
@@ -1398,6 +1483,26 @@ const EDU_CONTENT = {
     icon: '🐕', bg: '#F5F3FF', title: 'Gigitan Hewan Liar', sub: 'Rabies & Tindakan Awal',
     warning: '⚠️ Rabies SANGAT berbahaya. Segera ke puskesmas/RS untuk vaksin anti-rabies, jangan tunda!',
     steps: ['Cuci luka gigitan dengan air mengalir dan sabun selama minimal 15 menit','Berikan antiseptik (betadine/alkohol 70%) pada luka','SEGERA ke puskesmas atau IGD untuk mendapat Vaksin Anti Rabies (VAR)','Laporkan kejadian ke petugas RT — hewan liar perlu ditangani','Jangan dekati anjing/kucing/monyet liar yang berkeliaran','Hubungi Dinas Peternakan atau BKSDA jika ada hewan liar di lingkungan']
+  },
+  sayur: {
+    icon: '🥬', bg: '#F0FDF4', title: 'Menanam Sayur di Pekarangan', sub: 'Urban Farming Skala Rumah',
+    warning: '💡 Lahan sempit bukan halangan — pot, polybag, dan botol bekas bisa jadi media tanam yang efektif!',
+    steps: ['Pilih tanaman yang cepat panen: kangkung, bayam, sawi, selada, dan cabai rawit (30–45 hari)','Gunakan media tanam campuran: tanah + kompos + sekam bakar dengan perbandingan 1:1:1','Siram 1–2 kali sehari — pagi dan sore, hindari air menggenang agar akar tidak busuk','Letakkan pot/polybag di area yang mendapat sinar matahari minimal 4–6 jam per hari','Gunakan pupuk organik cair dari sisa cucian beras atau air bekas rendaman kulit bawang','Panen secara bertahap agar tanaman terus produktif — jangan dipanen sekaligus']
+  },
+  pupuk: {
+    icon: '♻️', bg: '#FFF7ED', title: 'Pupuk dari Limbah Dapur', sub: 'Kompos Organik Rumahan',
+    warning: '💡 Sampah dapur bisa jadi pupuk dalam 2–4 minggu! Kurangi sampah sekaligus suburkan tanaman.',
+    steps: ['Kumpulkan sisa sayuran, kulit buah, ampas kopi/teh, dan cangkang telur — hindari daging dan minyak','Siapkan wadah berlubang atau ember bekas sebagai komposter sederhana','Tambahkan lapisan tanah atau sekam setiap hari untuk mempercepat penguraian','Aduk tumpukan kompos setiap 2–3 hari agar udara masuk dan bakteri aktif bekerja','Kompos siap digunakan saat berwarna coklat gelap, berbau tanah, dan tidak panas','Aplikasikan ke tanaman 1 genggam per pot — campurkan dengan media tanam atau tabur di permukaan']
+  },
+  lele: {
+    icon: '🐟', bg: '#EFF6FF', title: 'Budikdamber — Lele dalam Ember', sub: 'Budidaya Ikan di Rumah',
+    warning: '💡 Budikdamber (Budidaya Ikan dalam Ember) = solusi protein hewani mandiri dengan biaya minimal!',
+    steps: ['Siapkan ember 80 liter — isi air hingga 3/4 penuh, diamkan 24 jam untuk hilangkan klorin','Tebar 50–70 bibit lele ukuran 5–7 cm (harga sekitar Rp 300–500/ekor di pasar ikan)','Pasang pot tanaman kangkung di atas ember — akar kangkung menyerap kotoran ikan secara alami','Beri pakan 2–3 kali sehari secukupnya — pakan habis dalam 5 menit tandanya porsi pas','Ganti 20–30% air tiap 3–4 hari atau saat air berbau menyengat (pertanda amonia tinggi)','Panen lele dalam 60–90 hari (bobot 100–150 gram/ekor) — kangkung bisa dipanen tiap 2 minggu']
+  },
+  tanamanobat: {
+    icon: '🌿', bg: '#F0FDFA', title: 'Tanaman Konsumsi & Apotek Hidup', sub: 'Daftar Tanaman Serbaguna RT',
+    warning: '💡 Tanam minimal 5 jenis ini di pekarangan — manfaat ganda: konsumsi harian + obat tradisional.',
+    steps: ['🌶️ Cabai & Tomat — konsumsi harian, mudah tanam di pot, panen rutin tiap minggu','🌿 Jahe, Kunyit & Lengkuas — rempah dapur sekaligus anti-inflamasi alami, tahan di pot besar','🍃 Kemangi & Daun Jeruk — bumbu masak segar, mengusir nyamuk secara alami di sekitar rumah','💊 Lidah Buaya (Aloe vera) — obat luka bakar, pelembab kulit, dan bisa dikonsumsi sebagai minuman','🌱 Sirih & Sambiloto — antiseptik tradisional untuk luka kecil, batuk, dan penurun panas ringan','🍀 Mint & Serai — pengusir serangga alami, bahan minuman segar, mudah tumbuh di pot kecil']
   }
 };
 
