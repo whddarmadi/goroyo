@@ -11,6 +11,18 @@
 
 ---
 
+## 📸 Screenshots
+
+| Beranda | Laporan Warga | Panduan AI |
+|:-------:|:-------------:|:----------:|
+| ![Beranda](assets/Home.jpeg) | ![Laporan](assets/Report.jpeg) | ![Emergency](assets/Emergency_Button.jpeg) |
+
+| Pusat Edukasi | Profil & Nomor Darurat |
+|:-------------:|:----------------------:|
+| ![Edukasi](assets/Education.jpeg) | ![Profil](assets/Profile.jpeg) |
+
+---
+
 ## ⚠️ Catatan Penting
 
 > **Ini adalah demo konsep** yang dibuat untuk kompetisi **#JuaraVibeCoding by Google**.
@@ -144,6 +156,12 @@ gcloud run deploy goroyo \
 
 ```
 goroyo/
+├── assets/
+│   ├── Home.jpeg              ← Screenshot tab Beranda
+│   ├── Report.jpeg            ← Screenshot tab Laporan Warga
+│   ├── Emergency_Button.jpeg  ← Screenshot modal panduan AI
+│   ├── Education.jpeg         ← Screenshot tab Edukasi
+│   └── Profile.jpeg           ← Screenshot tab Profil
 ├── index.html       ← Aplikasi utama (single-file PWA)
 ├── Dockerfile       ← Container config untuk Cloud Run
 ├── nginx.conf       ← Web server config (port 8080)
@@ -245,7 +263,7 @@ Dibuat dengan semangat pengalaman nyata di lapangan:
 
 ## Kredit & Acknowledgment
 
-- Konsep dikembangkan dengan bantuan AI (AI Studio, Antigravity, ChatGPT, Google Gemini, Claude)
+- Konsep dikembangkan dengan bantuan AI (AI Studio, ChatGPT, Google Gemini, Claude)
 - Panduan darurat mengacu pada standar PMI, BNPB, dan Kemenkes RI
 - Dibuat untuk **#JuaraVibeCoding by Google** — event vibe coding komunitas Indonesia
 
@@ -257,7 +275,7 @@ MIT License — bebas digunakan, dimodifikasi, dan dikembangkan untuk kepentinga
 
 ---
 
-*GoRoyo — Karena dalam kedaruratan, tetangga adalah andalan pertama.*
+*GoRoyo — Karena dalam kedaruratan, tetangga adalah pertolongan pertama.*
 
 ---
 
