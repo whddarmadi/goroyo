@@ -240,6 +240,43 @@ Biaya mulai muncul saat scaling ke ratusan RT atau menggunakan SMS gateway dan f
 
 ---
 
+## 🏆 GoRoyo & Kriteria JuaraVibeCoding
+
+### 1. Masalah (30%) — Nyata, Lokal, Mendesak
+
+**Target Audiens:** Warga RT/RW Indonesia — khususnya mereka yang tinggal di kawasan padat urban dengan akses informasi darurat yang minim dan koordinasi komunitas yang masih manual.
+
+**Mengapa penting sekarang?** Indonesia adalah salah satu negara paling rawan bencana di dunia. Namun di level RT/RW — unit terkecil masyarakat — belum ada sistem tanggap darurat yang terstruktur. Saat kebakaran atau banjir terjadi, warga masih mengandalkan teriakan dan grup WhatsApp.
+
+**Dampak & Skalabilitas:** GoRoyo dirancang hyperlocal tapi dapat direplikasi ke seluruh RT/RW Indonesia (±80 juta kepala keluarga) tanpa perubahan infrastruktur besar — cukup ganti data lokasi dan petugas.
+
+---
+
+### 2. Solusi (40%) — Fungsional, Profesional, Delightful
+
+**UX:** Single-tap emergency response — tidak ada login, tidak ada onboarding panjang. Warga ketuk tombol, panduan langsung muncul. Dirancang untuk digunakan satu tangan, dalam kondisi panik sekalipun.
+
+**Value Proposition terukur:**
+- ⚡ 0 detik loading — offline-first, panduan statis selalu tersedia
+- 🤖 Panduan AI kontekstual berdasarkan waktu kejadian (pagi/malam beda panduan)
+- 📚 13 panduan edukasi — dari CPR hingga urban farming & kesehatan mental
+- 📞 8 nomor darurat langsung bisa ditekan dari satu halaman
+- 🌱 Ketahanan pangan komunitas sebagai bagian dari tanggap bencana jangka panjang
+
+---
+
+### 3. Keunikan (30%) — The Spark
+
+**Orisinalitas:** GoRoyo bukan sekadar app darurat. Ia adalah ekosistem ketahanan komunitas — menggabungkan respons bencana, kesehatan mental, ketahanan pangan, dan laporan warga dalam satu single HTML file tanpa framework apapun.
+
+**Faktor "Wow":**
+- Dibangun dalam 2 hari oleh seseorang berlatar belakang desain & multimedia — bukan developer
+- Gemini 2.0 Flash digunakan bukan sekadar chatbot, tapi sebagai *contextual emergency guide* yang menyesuaikan respons berdasarkan jenis bencana dan waktu kejadian
+- Terinspirasi dari pengalaman nyata sebagai relawan Mitigasi Bencana PMI — bukan sekadar ide di atas kertas
+- Tombol konsultasi psikologis — satu-satunya app darurat RT/RW yang ingat bahwa bencana juga melukai mental warga
+
+---
+
 ## Filosofi Desain
 
 GoRoyo dibangun dengan prinsip:
