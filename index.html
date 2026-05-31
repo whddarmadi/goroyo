@@ -1,4 +1,4 @@
-312332345w<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -648,7 +648,7 @@
       <span style="font-size:11px;opacity:0.7">3 Petugas</span>
     </div>
     <div class="officer-row">
-      <div class="officer-avatar av-green">US</div>
+      <div class="officer-avatar av-green">PH</div>
       <div class="officer-info">
         <div class="officer-name">Ustad Subhan</div>
         <div class="officer-role">Marbot Mushola Al-Ikhlas · K3</div>
@@ -661,7 +661,7 @@
       </button>
     </div>
     <div class="officer-row">
-      <div class="officer-avatar av-blue">RT</div>
+      <div class="officer-avatar av-blue">BS</div>
       <div class="officer-info">
         <div class="officer-name">Pak Jono</div>
         <div class="officer-role">Ketua RT · Kendaraan Siaga</div>
@@ -674,7 +674,7 @@
       </button>
     </div>
     <div class="officer-row">
-      <div class="officer-avatar av-amber">BE</div>
+      <div class="officer-avatar av-amber">RD</div>
       <div class="officer-info">
         <div class="officer-name">Bu Ella</div>
         <div class="officer-role">PKK · Petugas Cadangan</div>
@@ -866,6 +866,16 @@
           <div class="edu-info"><div class="edu-title">Tanah Longsor</div><div class="edu-desc">Tanda awal dan tindakan</div></div>
           <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
+        <div class="edu-card" onclick="openEduDetail('tsunami')">
+          <span class="edu-icon" style="background:#DBEAFE;color:#1E40AF">🌊</span>
+          <div class="edu-info"><div class="edu-title">Tsunami & Banjir Rob</div><div class="edu-desc">Tanda bahaya & evakuasi cepat</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('kekeringan')">
+          <span class="edu-icon" style="background:#FFFBEB;color:#B45309">☀️</span>
+          <div class="edu-info"><div class="edu-title">Kekeringan & Krisis Air</div><div class="edu-desc">Hemat air & sumber alternatif</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
       </div>
 
       <div class="section-head" style="margin-top:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><h2>Pertolongan Pertama</h2></div>
@@ -885,6 +895,31 @@
           <div class="edu-info"><div class="edu-title">Pertolongan Luka</div><div class="edu-desc">Balut & hentikan perdarahan</div></div>
           <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
+        <div class="edu-card" onclick="openEduDetail('tenggelam')">
+          <span class="edu-icon" style="background:#EFF6FF;color:#1D4ED8">🏊</span>
+          <div class="edu-info"><div class="edu-title">Korban Nyaris Tenggelam</div><div class="edu-desc">Pertolongan & penanganan awal</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('kejang')">
+          <span class="edu-icon" style="background:#FDF2F8;color:#9D174D">🧠</span>
+          <div class="edu-info"><div class="edu-title">Kejang, Demam Tinggi & Epilepsi</div><div class="edu-desc">Yang boleh & tidak boleh dilakukan</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('diare')">
+          <span class="edu-icon" style="background:#FFFBEB;color:#B45309">💊</span>
+          <div class="edu-info"><div class="edu-title">Diare & Dehidrasi</div><div class="edu-desc">Oralit & tanda bahaya</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('bumil')">
+          <span class="edu-icon" style="background:#FDF2F8;color:#9D174D">🤰</span>
+          <div class="edu-info"><div class="edu-title">Pertolongan Pertama Ibu Hamil</div><div class="edu-desc">Tanda bahaya & kondisi darurat</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('babyblues')">
+          <span class="edu-icon" style="background:#EFF6FF;color:#1D4ED8">👶</span>
+          <div class="edu-info"><div class="edu-title">Baby Blues & Depresi Pasca Melahirkan</div><div class="edu-desc">Nyata, bukan lebay, butuh dukungan</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
       </div>
 
       <div class="section-head" style="margin-top:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><h2>Kesehatan & Wabah</h2></div>
@@ -894,9 +929,34 @@
           <div class="edu-info"><div class="edu-title">Pencegahan DBD</div><div class="edu-desc">3M Plus dan tanda bahaya</div></div>
           <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
+        <div class="edu-card" onclick="openEduDetail('sampah')">
+          <span class="edu-icon" style="background:#F0FDF4;color:#15803D">♻️</span>
+          <div class="edu-info"><div class="edu-title">Pemilahan Sampah & Bahaya Bakar Sampah</div><div class="edu-desc">Pilah, olah, jangan bakar</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('rokok')">
+          <span class="edu-icon" style="background:#FEF2F2;color:#DC2626">🚭</span>
+          <div class="edu-info"><div class="edu-title">Bahaya Rokok & Thirdhand Smoke</div><div class="edu-desc">Asap, residu, & tips berhenti</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
         <div class="edu-card" onclick="openEduDetail('rabies')">
           <span class="edu-icon" style="background:#F5F3FF;color:#7C3AED">🐕</span>
           <div class="edu-info"><div class="edu-title">Gigitan Hewan Liar</div><div class="edu-desc">Rabies & tindakan awal</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('tikus')">
+          <span class="edu-icon" style="background:#F9FAFB;color:#374151">🐀</span>
+          <div class="edu-info"><div class="edu-title">Wabah Tikus & Rayap</div><div class="edu-desc">Pengendalian hama rumah</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('ular')">
+          <span class="edu-icon" style="background:#F0FDF4;color:#15803D">🐍</span>
+          <div class="edu-info"><div class="edu-title">Menangani Ular & Gigitan Ular</div><div class="edu-desc">Berbisa & tidak berbisa</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('kucingular')">
+          <span class="edu-icon" style="background:#FFF7ED;color:#C2410C">🐱</span>
+          <div class="edu-info"><div class="edu-title">Kucing & Anjing Liar — Dampak Overfeeding</div><div class="edu-desc">Rantai makanan & keseimbangan ekosistem</div></div>
           <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
       </div>
@@ -923,12 +983,54 @@
           <div class="edu-info"><div class="edu-title">Tanaman Konsumsi & Apotek Hidup</div><div class="edu-desc">Daftar tanaman serbaguna</div></div>
           <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
+        <div class="edu-card" onclick="openEduDetail('ayam')">
+          <span class="edu-icon" style="background:#FFFBEB;color:#B45309">🐔</span>
+          <div class="edu-info"><div class="edu-title">Memelihara Ayam di Rumah</div><div class="edu-desc">Bersih, tidak ganggu tetangga</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('sayurliar')">
+          <span class="edu-icon" style="background:#F0FDF4;color:#16A34A">🌱</span>
+          <div class="edu-info"><div class="edu-title">Sayuran Liar & Mudah Ditanam</div><div class="edu-desc">Kelor, bayam liar, daun singkong, dll</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+
+      <div class="section-head" style="margin-top:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg><h2>Sosial & Perlindungan Warga</h2></div>
+      <div class="edu-card-list">
+        <div class="edu-card" onclick="openEduDetail('krisisjiwa')">
+          <span class="edu-icon" style="background:#FDF2F8;color:#9D174D">🆘</span>
+          <div class="edu-info"><div class="edu-title">Krisis Jiwa & Pencegahan Bunuh Diri</div><div class="edu-desc">Mengenali & merespons dengan benar</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('kdrt')">
+          <span class="edu-icon" style="background:#FFF1F2;color:#BE123C">🛡️</span>
+          <div class="edu-info"><div class="edu-title">KDRT — Kekerasan dalam Rumah Tangga</div><div class="edu-desc">Semua gender bisa jadi korban</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('bullying')">
+          <span class="edu-icon" style="background:#FFF7ED;color:#C2410C">✊</span>
+          <div class="edu-info"><div class="edu-title">Bullying & Ancaman</div><div class="edu-desc">Semua usia, semua bentuk</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('terlantar')">
+          <span class="edu-icon" style="background:#F0FDF4;color:#15803D">🤲</span>
+          <div class="edu-info"><div class="edu-title">Warga Terlantar & Kelaparan</div><div class="edu-desc">Kepedulian gotong royong RT/RW</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('phk')">
+          <span class="edu-icon" style="background:#EFF6FF;color:#1D4ED8">💼</span>
+          <div class="edu-info"><div class="edu-title">Terkena PHK — Langkah Selanjutnya</div><div class="edu-desc">BLK, bantuan sosial & UMKM</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+        <div class="edu-card" onclick="openEduDetail('disabilitas')">
+          <span class="edu-icon" style="background:#F5F3FF;color:#6D28D9">♿</span>
+          <div class="edu-info"><div class="edu-title">Warga Disabilitas & Berkebutuhan Khusus</div><div class="edu-desc">Sikap & kepedulian yang benar</div></div>
+          <svg class="edu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- ===================== TAB: PROFIL ===================== -->
 <div id="tab-profil" class="tab-page" style="display:none;">
   <div class="tab-header">
     <h1 class="tab-title">Profil Saya</h1>
@@ -972,6 +1074,10 @@
       <div class="info-row"><span class="info-label">⚡ PLN 24 Jam</span><span class="info-val"><a href="tel:123" style="color:var(--amber);font-weight:600;text-decoration:none">123</a></span></div>
       <div class="info-row"><span class="info-label">🧠 Puskesmas Kramat Jati</span><span class="info-val"><a href="tel:021-8093658" style="color:var(--teal);font-weight:600;text-decoration:none">021-8093658</a></span></div>
       <div class="info-row" style="border:none"><span class="info-label">🩸 Bank Darah PMI Jakarta</span><span class="info-val"><a href="tel:021-3906666" style="color:#DC2626;font-weight:600;text-decoration:none">021-3906666</a></span></div>
+      <div class="info-row"><span class="info-label">🏥 RSUD Kramat Jati</span><span class="info-val"><a href="tel:021-8090632" style="color:#DC2626;font-weight:600;text-decoration:none">021-8090632</a></span></div>
+      <div class="info-row"><span class="info-label">🎓 PPKPI Jakarta (BLK)</span><span class="info-val"><a href="tel:021-8191429" style="color:#1D4ED8;font-weight:600;text-decoration:none">021-8191429</a></span></div>
+      <div class="info-row"><span class="info-label">🏛️ Kel. Cililitan</span><span class="info-val"><a href="tel:021-8092602" style="color:#374151;font-weight:600;text-decoration:none">021-8092602</a></span></div>
+      <div class="info-row" style="border:none"><span class="info-label">🏢 Kec. Kramat Jati</span><span class="info-val"><a href="tel:021-8093536" style="color:#374151;font-weight:600;text-decoration:none">021-8093536</a></span></div>
     </div>
 
     <div class="section-head" style="margin-top:20px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg><h2>Tentang GoRoyo</h2></div>
@@ -1503,6 +1609,113 @@ const EDU_CONTENT = {
     icon: '🌿', bg: '#F0FDFA', title: 'Tanaman Konsumsi & Apotek Hidup', sub: 'Daftar Tanaman Serbaguna RT',
     warning: '💡 Tanam minimal 5 jenis ini di pekarangan — manfaat ganda: konsumsi harian + obat tradisional.',
     steps: ['🌶️ Cabai & Tomat — konsumsi harian, mudah tanam di pot, panen rutin tiap minggu','🌿 Jahe, Kunyit & Lengkuas — rempah dapur sekaligus anti-inflamasi alami, tahan di pot besar','🍃 Kemangi & Daun Jeruk — bumbu masak segar, mengusir nyamuk secara alami di sekitar rumah','💊 Lidah Buaya (Aloe vera) — obat luka bakar, pelembab kulit, dan bisa dikonsumsi sebagai minuman','🌱 Sirih & Sambiloto — antiseptik tradisional untuk luka kecil, batuk, dan penurun panas ringan','🍀 Mint & Serai — pengusir serangga alami, bahan minuman segar, mudah tumbuh di pot kecil']
+  },
+  tsunami: {
+    icon: '🌊', bg: '#DBEAFE', title: 'Tsunami & Banjir Rob', sub: 'Tanda Bahaya & Evakuasi Cepat',
+    warning: '⚠️ TSUNAMI: Jika gempa kuat di dekat pantai dan air laut SURUT TIBA-TIBA — LARI ke tempat tinggi SEKARANG tanpa menunggu peringatan!',
+    steps: ['Kenali tanda tsunami: gempa kuat + air laut surut tiba-tiba + suara gemuruh dari laut','LANGSUNG lari ke dataran tinggi minimal 30 meter atau gedung bertingkat — jangan ambil barang','Jangan kembali ke pantai sampai ada pengumuman resmi BMKG bahwa aman','Banjir Rob (pasang): pantau prediksi BMKG, naikkan barang berharga, siapkan tanggul darurat','Saat Rob: matikan listrik bagian bawah rumah, pindahkan dokumen & elektronik ke lantai atas','Setelah surut: waspada kontaminasi air — jangan konsumsi air yang terkena banjir rob']
+  },
+  kekeringan: {
+    icon: '☀️', bg: '#FFFBEB', title: 'Kekeringan & Krisis Air', sub: 'Hemat Air & Sumber Alternatif',
+    warning: '💡 Kekeringan bisa terjadi di perkotaan — kebijakan hemat air di RT/RW bisa menyelamatkan warga.',
+    steps: ['Tampung air hujan dengan drum atau bak — bisa digunakan untuk menyiram tanaman & cuci','Hemat air: matikan keran saat gosok gigi, mandikan anak bersama, cuci baju sekali penuh','Gunakan air bekas cucian beras & sayuran untuk menyiram tanaman','Laporkan kebocoran pipa PDAM segera ke 021-526-0676 — air terbuang sia-sia','Koordinasi dengan RT untuk beli air bersama jika krisis — lebih murah dan adil','Tanam tanaman penyimpan air seperti kaktus dan lidah buaya sebagai cadangan pangan darurat']
+  },
+  tenggelam: {
+    icon: '🏊', bg: '#EFF6FF', title: 'Korban Nyaris Tenggelam', sub: 'Pertolongan & Penanganan Awal',
+    warning: '⚠️ JANGAN loncat ke air jika kamu tidak bisa berenang — lempar tali, bambu, atau ban terlebih dahulu!',
+    steps: ['Lempar pelampung: tali, botol plastik berisi udara, atau benda apapun yang mengapung','Tarik korban ke tepi — jangan biarkan korban memelukmu erat saat di air (bisa menenggelamkan)','Setelah di darat: miringkan tubuh korban 45 derajat — biarkan air keluar dari mulut','Periksa napas — jika tidak bernapas segera lakukan CPR (30 kompresi : 2 napas buatan)','Hangatkan tubuh korban dengan selimut — hipotermia bahaya meski di cuaca panas','SEGERA hubungi 119 — bahkan jika korban tampak sadar, komplikasi bisa terjadi belakangan']
+  },
+  kejang: {
+    icon: '🧠', bg: '#FDF2F8', title: 'Kejang, Demam Tinggi & Epilepsi', sub: 'Yang Boleh & Tidak Boleh Dilakukan',
+    warning: '⚠️ JANGAN memasukkan apapun ke mulut korban kejang — ini mitos berbahaya yang bisa menyebabkan luka!',
+    steps: ['Saat kejang: jauhkan benda keras di sekitar, letakkan bantal lunak di bawah kepala','Miringkan tubuh ke satu sisi agar ludah/muntah tidak masuk ke saluran napas','JANGAN menahan gerakan tubuh — biarkan kejang berlalu, biasanya berhenti sendiri 1–3 menit','Demam tinggi pada anak (>38.5°C): kompres hangat di dahi & ketiak, berikan paracetamol sesuai dosis','Untuk epilepsi: catat durasi kejang — jika >5 menit atau berulang segera ke IGD','Setelah kejang: korban biasanya bingung & ngantuk — dampingi, tenangkan, jangan tinggalkan sendirian']
+  },
+  diare: {
+    icon: '💊', bg: '#FFFBEB', title: 'Diare & Dehidrasi', sub: 'Oralit & Tanda Bahaya',
+    warning: '⚠️ Dehidrasi akibat diare adalah penyebab kematian utama pada balita — tangani dengan cepat!',
+    steps: ['Buat oralit darurat: 1 liter air matang + 1 sendok teh garam + 8 sendok teh gula — aduk rata','Minum oralit sedikit-sedikit tapi sering — jangan minum langsung banyak','Tanda dehidrasi berbahaya: mata cekung, tidak keluar air mata, mulut kering, tidak buang air kecil 6+ jam','Tetap makan makanan lunak: bubur, pisang, roti tawar — perut tidak boleh kosong','Cuci tangan pakai sabun SETIAP SAAT selama wabah diare di RT — virus menyebar lewat tangan','Segera ke puskesmas/IGD jika: darah dalam tinja, demam tinggi, diare >24 jam pada bayi']
+  },
+  krisisjiwa: {
+    icon: '🆘', bg: '#FDF2F8', title: 'Krisis Jiwa & Pencegahan Bunuh Diri', sub: 'Mengenali & Merespons dengan Benar',
+    warning: '💙 Jika seseorang mengungkapkan ingin mengakhiri hidup — PERCAYAI dan TANGANI SERIUS. Jangan anggap hanya mencari perhatian.',
+    steps: ['Tanda krisis: menarik diri dari sosial, memberi barang berharga, bicara soal "beban bagi orang lain" atau "lebih baik tidak ada"','Tanyakan langsung dengan tenang: "Apakah kamu punya pikiran untuk menyakiti diri sendiri?" — bertanya TIDAK akan memicu','Dengarkan tanpa menghakimi — jangan bilang "lebih bersyukur" atau "masalahmu tidak seberat itu"','Jangan tinggalkan sendirian — dampingi atau minta anggota keluarga lain menemani','Hubungi Into The Light Indonesia: 119 ext 8 atau Yayasan Pulih: 021-788-42580','Antar ke Puskesmas Kramat Jati atau RSUD Kramat Jati untuk penanganan profesional segera']
+  },
+  kdrt: {
+    icon: '🛡️', bg: '#FFF1F2', title: 'KDRT — Kekerasan dalam Rumah Tangga', sub: 'Semua Gender Bisa Jadi Korban',
+    warning: '⚠️ KDRT bukan hanya fisik — kekerasan verbal, ekonomi, dan psikologis juga termasuk KDRT dan bisa dilaporkan.',
+    steps: ['KDRT bisa menimpa siapa saja: perempuan, laki-laki, anak-anak — tidak ada yang "pantas" mengalaminya','Jika kamu korban: dokumentasikan bukti (foto luka, rekam percakapan), simpan di tempat aman','Hubungi SAPA 129 (Kementerian PPPA) — hotline 24 jam untuk korban KDRT','Laporkan ke Polsek terdekat atau Unit PPA (Pelayanan Perempuan & Anak) di kantor polisi','Warga yang menyaksikan tanda KDRT di tetangga: laporkan ke RT/RW atau langsung ke polisi','KDRT pada laki-laki: sering tidak dilaporkan karena stigma — tetap valid dan bisa dilaporkan']
+  },
+  bullying: {
+    icon: '✊', bg: '#FFF7ED', title: 'Bullying & Ancaman di Lingkungan', sub: 'Semua Usia, Semua Bentuk',
+    warning: '⚠️ Bullying bukan "bercanda biasa" — dampak psikologisnya bisa bertahan seumur hidup pada korban.',
+    steps: ['Bentuk bullying: fisik (pukul, dorong), verbal (hina, ancam), sosial (dikucilkan), digital (cyberbullying)','Jika kamu atau keluargamu dibully/diancam: dokumentasikan — foto, screenshot, catat tanggal & saksi','Ancaman dari preman atau ormas: laporkan ke Polsek — ini tindak pidana (Pasal 368 KUHP)','Orang tua: percayai anak yang melaporkan dibully — jangan remehkan atau suruh "tahan saja"','Jika anakmu mem-bully orang lain: tangani serius, ajak bicara empati, minta maaf ke korban','Hubungi P2TP2A Jakarta Timur: 021-8191023 untuk konsultasi kasus bullying & perlindungan anak']
+  },
+  terlantar: {
+    icon: '🤲', bg: '#F0FDF4', title: 'Warga Terlantar & Kelaparan', sub: 'Kepedulian Gotong Royong RT/RW',
+    warning: '💙 Kelaparan di sekitar kita adalah tanggung jawab bersama — kas RT dan masjid bisa menjadi solusi nyata.',
+    steps: ['Kenali warga rentan di RT: lansia sebatang kara, keluarga miskin, anak tidak sekolah, orang terlantar','Usulkan ke pengurus RT: alokasikan sebagian kas RT untuk "Dana Darurat Warga" — transparansi wajib','Kas masjid/mushola: bisa diberdayakan untuk bantuan pangan darurat bagi warga yang kelaparan','Anak terlantar/dibuang: segera laporkan ke Dinas Sosial Jakarta Timur: 021-8191023','Lansia terlantar: hubungi Panti Sosial Tresna Werdha atau Dinas Sosial untuk penanganan','Program bantuan: pastikan warga miskin mendapatkan PKH, BPNT, dan KIP — bantu urus ke kelurahan']
+  },
+  phk: {
+    icon: '💼', bg: '#EFF6FF', title: 'Terkena PHK — Langkah Selanjutnya', sub: 'BLK, Bantuan Sosial & Peluang Baru',
+    warning: '💙 PHK bukan akhir — ini kesempatan untuk membangun keterampilan baru dan jalur hidup yang lebih baik.',
+    steps: ['Hak pesangon: pastikan kamu mendapat pesangon sesuai UU Cipta Kerja — hubungi Disnaker jika tidak dibayar','Daftar PPKPI Jakarta (BLK): 021-8191429 — pelatihan gratis (menjahit, elektronik, las, komputer, kuliner)','Daftar kartu prakerja di prakerja.go.id — dapat insentif + akses pelatihan online berbayar gratis','Minta surat keterangan dari RT/RW untuk mengurus bansos: PKH, BPNT, dan KIS di kantor kelurahan','UMKM dari rumah: mulai dari keahlian yang ada — masak, jahit, desain, servis — modal bisa dari KUR BRI/BNI','Komunitas RT bisa patungan modal kecil untuk usaha warga yang di-PHK — gotong royong ekonomi']
+  },
+  disabilitas: {
+    icon: '♿', bg: '#F5F3FF', title: 'Warga Disabilitas & Berkebutuhan Khusus', sub: 'Sikap & Kepedulian yang Benar',
+    warning: '💙 Disabilitas bukan kekurangan — mereka adalah bagian penuh dari komunitas RT/RW kita.',
+    steps: ['Jangan mengasihani berlebihan — tanyakan langsung bantuan apa yang mereka butuhkan','Anak Down Syndrome & autisme: ajak bermain, sapa dengan nama, perlakukan setara dengan anak lain','Bully terhadap penyandang disabilitas adalah tindakan keji — tegur langsung, jangan diam','Akses darurat: pastikan jalur evakuasi bisa dilalui kursi roda — koordinasikan dengan RT','Hak disabilitas: KTP disabilitas, KIS, dan bantuan sosial khusus tersedia — bantu urus ke kelurahan','Daftarkan ke Komisi Nasional Disabilitas atau Dinas Sosial untuk mendapat pendampingan resmi']
+  },
+  tikus: {
+    icon: '🐀', bg: '#F9FAFB', title: 'Wabah Tikus & Rayap', sub: 'Pengendalian Hama Rumah',
+    warning: '⚠️ Tikus pembawa leptospirosis — penyakit berbahaya yang menular lewat urine tikus yang terkena kulit luka.',
+    steps: ['Pencegahan tikus: tutup rapat tempat sampah, jangan biarkan makanan terbuka, tambal celah dinding & lantai','Perangkap tikus lebih aman dari racun — racun tikus bisa membunuh kucing & predator alami lainnya','Rayap: tanda awal adalah serbuk kayu halus atau terowongan lumpur di tembok — tangani sebelum menyebar','Fumigasi rayap bisa dilakukan bersama warga RT — biaya lebih murah, lebih efektif','Jika ada warga demam setelah banjir + kontak dengan tikus: waspada leptospirosis, segera ke puskesmas','Koordinasi RT untuk kebersihan selokan dan got — genangan air adalah sarang tikus dan nyamuk']
+  },
+  ular: {
+    icon: '🐍', bg: '#F0FDF4', title: 'Menangani Ular di Lingkungan', sub: 'Berbisa & Tidak Berbisa',
+    warning: '⚠️ JANGAN membunuh ular sembarangan — ular adalah predator alami tikus. Hubungi pawang atau BKSDA.',
+    steps: ['Ular berbisa di Indonesia: kobra (capucin), welang, bandotan — tandanya: kepala segitiga, sisik ekor tunggal','Jika bertemu ular: DIAM, mundur perlahan, jangan sentuh atau provokasi — sebagian besar ular hanya menyerang jika terancam','Gigitan ular berbisa: imobilisasi bagian yang digigit (ikat longgar di atas gigitan), JANGAN hisap racun','Segera ke IGD RS dengan membawa foto ular jika bisa — dokter butuh tahu jenisnya untuk antivenom','Jika ada ular di rumah: hubungi Damkar Jakarta 113 atau komunitas snake rescue lokal','Ular tidak berbisa (sanca, dll): hubungi BKSDA untuk relokasi — jangan bunuh, mereka membantu kontrol tikus']
+  },
+  kucingular: {
+    icon: '🐱', bg: '#FFF7ED', title: 'Kucing & Anjing Liar — Dampak Overfeeding', sub: 'Rantai Makanan & Keseimbangan Ekosistem',
+    warning: '💙 Menyayangi hewan itu mulia — tapi memberi makan kemasan berlebihan pada hewan liar justru merusak lingkungan.',
+    steps: ['Kucing liar yang terlalu kenyang akan malas berburu tikus dan ular — rantai makanan terganggu','Overpopulasi kucing/anjing liar menyebabkan: kotoran dimana-mana, wabah kutu, risiko rabies & toksoplasmosis','Solusi sehat: beri makan secukupnya — jangan sampai kucing liar jadi malas & bergantung penuh','Program TNR (Trap-Neuter-Return): tangkap, sterilkan, lepas kembali — solusi jangka panjang overpopulasi','Kotoran kucing mengandung parasit Toxoplasma — berbahaya bagi ibu hamil, pakai sarung tangan saat bersih-bersih','Koordinasi RT untuk aturan bersama soal pemberian pakan hewan liar — demi kesehatan komunitas']
+  },
+  ayam: {
+    icon: '🐔', bg: '#FFFBEB', title: 'Memelihara Ayam di Rumah', sub: 'Bersih, Produktif & Tidak Ganggu Tetangga',
+    warning: '💡 Ayam kampung = sumber protein murah! Dengan kandang yang benar, tidak bau dan tidak ganggu tetangga.',
+    steps: ['Kandang: minimal 0.5m²/ekor, atap tertutup, lantai bisa diberi sekam padi untuk serap kotoran','Bersihkan kotoran tiap 2 hari — campurkan dengan kompos dapur untuk pupuk organik premium','Ayam petelur: bertelur mulai umur 5–6 bulan, produksi 250–300 telur/tahun/ekor','Pakan murah: sisa nasi, dedak, sayuran busuk, cacing tanah, jangkrik — hemat biaya pakan 50%','Vaksin Newcastle Disease (ND) tiap 3 bulan — cegah kematian massal ayam di lingkungan RT','Kandang jauh dari ventilasi rumah tetangga — minta izin RT sebelum membuat kandang ayam']
+  },
+  sayurliar: {
+    icon: '🌱', bg: '#F0FDF4', title: 'Sayuran Liar & Mudah Ditanam', sub: 'Sumber Pangan Gratis di Sekitar Kita',
+    warning: '💡 Banyak tanaman "gulma" di sekitar rumah ternyata bisa dimakan dan bergizi tinggi — kenali mereka!',
+    steps: ['🌿 Kelor (Moringa): daun super pangan, bisa direbus/ditumis, tinggi protein & vitamin — tumbuh liar di pagar','🍃 Bayam liar (Amaranthus): tumbuh di tanah kosong, bisa dimakan seperti bayam biasa','🌱 Daun Singkong & Daun Pepaya: mudah tumbuh, wajib direbus — jangan dimakan mentah','🌾 Bangun-bangun (Coleus amboinicus): daun aromatik, baik untuk ibu menyusui, tumbuh di pot','🍀 Ginseng Jawa (Talinum paniculatum): tumbuh liar, daun bisa ditumis, dipercaya meningkatkan stamina','Budidaya mudah: bayam, kangkung, sawi, kelor — tanam di polybag, panen dalam 3–4 minggu']
+  },
+  sampah: {
+    icon: '♻️', bg: '#F0FDF4', title: 'Pemilahan Sampah & Bahaya Bakar Sampah', sub: 'Pilah, Olah, Jangan Bakar',
+    warning: '⚠️ Membakar sampah plastik menghasilkan dioksin — racun karsinogenik yang 40x lebih berbahaya dari asap rokok dan bisa menyebabkan kanker!',
+    steps: [
+      '🟢 Sampah Organik (hijau): sisa makanan, kulit buah, daun — masuk komposter atau lubang biopori di halaman',
+      '🔵 Sampah Anorganik (biru): botol plastik, kaleng, kertas, kardus — kumpulkan untuk dijual ke bank sampah atau pemulung',
+      '🔴 Sampah B3 (merah): baterai bekas, lampu neon, obat kadaluarsa, cat — JANGAN buang sembarangan, titipkan ke Dinas LH',
+      '🚫 Bahaya bakar sampah: asap plastik mengandung dioksin, furan, dan benzena — merusak paru-paru, hati, dan sistem imun seluruh warga RT',
+      '💡 Alternatif pengganti bakar sampah: lubang biopori untuk organik, bank sampah untuk anorganik, TPS3R untuk residu',
+      '🤝 Koordinasi RT: jadwalkan pengambilan sampah rutin, bentuk bank sampah RT — hasilnya bisa masuk kas warga'
+    ]
+  },
+  rokok: {
+    icon: '🚭', bg: '#FEF2F2', title: 'Bahaya Rokok & Thirdhand Smoke', sub: 'Asap, Residu & Tips Berhenti Merokok',
+    warning: '⚠️ THIRDHAND SMOKE: Residu nikotin yang menempel di tembok, pakaian & furnitur tetap berbahaya berbulan-bulan — bahkan setelah rokok padam. Anak-anak & bayi paling rentan.',
+    steps: ['Secondhand smoke (asap rokok): mengandung 70+ zat karsinogenik — tidak ada batas aman bagi orang di sekitar perokok','Thirdhand smoke (residu): nikotin menempel di tembok, baju, rambut, sofa — terserap kulit bayi yang merangkak & menyentuh permukaan','Tanda bahaya pada anak: batuk kronis, sesak napas, ISPA berulang — periksa apakah ada perokok di rumah','Tips berhenti merokok: ganti dengan permen jahe/kayu manis saat dorongan muncul, minta dukungan keluarga, hubungi Quitline 0800-177-6565 (gratis)','Bersihkan thirdhand smoke: cuci semua baju, lap permukaan dengan campuran air + cuka, cat ulang tembok jika perlu','Aturan tegas di rumah: merokok di luar rumah & jauh dari anak — ini bukan diskriminasi, ini melindungi nyawa keluarga']
+  },
+  bumil: {
+    icon: '🤰', bg: '#FDF2F8', title: 'Pertolongan Pertama Ibu Hamil', sub: 'Tanda Bahaya & Kondisi Darurat',
+    warning: '⚠️ Segala tanda bahaya kehamilan harus ditangani SEGERA — jangan tunggu "lihat dulu besok". Hubungi bidan atau IGD seketika.',
+    steps: ['🚨 Tanda darurat SEGERA ke IGD: perdarahan dari jalan lahir, nyeri perut hebat, kepala pusing berat + pandangan kabur, kejang','Preeklampsia: tekanan darah tinggi + bengkak tangan/wajah + sakit kepala hebat — darurat, bisa sebabkan kejang & kematian','Bayi tidak bergerak >12 jam: segera ke bidan/IGD untuk pemeriksaan detak jantung janin','Mual muntah parah (hiperemesis): jika tidak bisa minum apapun >24 jam — perlu infus di puskesmas/RS','Posisi aman jika pingsan: miringkan ke sisi kiri untuk jaga aliran darah ke janin — jangan telentang','Melahirkan darurat di rumah: hubungi 119 atau bidan SEGERA, siapkan kain bersih, jangan potong tali pusat sebelum tenaga medis datang']
+  },
+  babyblues: {
+    icon: '👶', bg: '#EFF6FF', title: 'Baby Blues & Depresi Pasca Melahirkan', sub: 'Nyata, Bukan Lebay, Butuh Dukungan',
+    warning: '💙 Baby blues BUKAN tanda ibu tidak bersyukur atau tidak mencintai bayinya. Ini kondisi medis nyata akibat perubahan hormon drastis pasca melahirkan.',
+    steps: ['Baby blues (3–14 hari pasca lahir): menangis tiba-tiba, cemas, mudah marah, lelah ekstrem — NORMAL dan akan berlalu','Depresi pasca melahirkan (PPD): jika gejala bertahan >2 minggu + tidak mau merawat bayi + pikiran menyakiti diri — segera cari bantuan profesional','Untuk suami & keluarga: JANGAN bilang "harusnya bahagia punya bayi" — dengarkan, dampingi, bantu pekerjaan rumah tanpa diminta','Tanda PPD yang sering diabaikan: ibu tidak mau menyentuh bayi, merasa tidak terhubung, merasa jadi ibu yang gagal','Penanganan: konsultasi ke bidan/dokter, dukungan emosional keluarga adalah obat terkuat, tidur cukup sangat krusial','Hubungi Puskesmas Kramat Jati: 021-8093658 atau bidan terdekat — jangan hadapi sendiri']
   }
 };
 

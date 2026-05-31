@@ -8,6 +8,7 @@
 ![Cloud Run](https://img.shields.io/badge/deploy-Cloud%20Run-4285F4?logo=googlecloud)
 
 🌐 **Live Demo:** [nginx-app-596656023692.asia-southeast2.run.app](https://nginx-app-596656023692.asia-southeast2.run.app)
+🎬 **Video Demo:** [Tonton di YouTube](https://www.youtube.com/shorts/dJs5hwXzc0Q)
 
 ---
 
@@ -58,10 +59,15 @@ Tombol darurat satu ketuk → panduan AI kontekstual via Gemini → notifikasi p
 | 👮 **Petugas Siaga** | Status shift & kontak langsung 3 petugas siskamling |
 | 📢 **Pengumuman** | Papan informasi RT/RW dengan kategori |
 | 📋 **Laporan Warga** | Form laporan 6 kategori (anonim/terbuka) dengan riwayat laporan |
-| 📚 **Pusat Edukasi** | 13 panduan lengkap: CPR, APAR, banjir, gempa, DBD, rabies, urban farming, dll — searchable |
-| 🌱 **Urban Farming RT** | 4 panduan ketahanan pangan: sayur pekarangan, kompos dapur, budikdamber lele, apotek hidup |
-| 🧠 **Kesehatan Mental** | Tombol akses cepat ke layanan psikologis Puskesmas Kecamatan |
-| 👤 **Profil & Nomor Darurat** | Info warga, lokasi RT/RW, 8 nomor darurat lengkap termasuk PLN, PMI, dan Puskesmas |
+| 📚 **Pusat Edukasi** | 34 panduan lengkap dalam 6 kategori — searchable, offline-ready |
+| 🆘 **Mitigasi Bencana** | Kebakaran, Banjir, Gempa, Longsor, Tsunami, Banjir Rob, Kekeringan |
+| 🩺 **Pertolongan Pertama** | CPR, APAR, luka, tenggelam, kejang, demam, epilepsi, diare, ibu hamil |
+| 🧠 **Kesehatan & Wabah** | DBD, rabies, sampah, rokok & thirdhand smoke, baby blues, gangguan jiwa |
+| 🌱 **Urban Farming RT** | Sayur, kompos, budikdamber lele, apotek hidup, ayam, sayuran liar |
+| 🤝 **Sosial & Perlindungan** | Krisis jiwa & bunuh diri, KDRT, bullying, warga terlantar, PHK, disabilitas |
+| 🐍 **Wabah & Hama** | Tikus, rayap, ular, kucing liar & dampak overfeeding |
+| 📞 **Nomor Darurat Lengkap** | 12 nomor: Damkar, IGD, Polisi, BPBD, BNPB, PLN, PMI, Puskesmas, RSUD, BLK, Kelurahan, Kecamatan |
+| 👤 **Profil Warga** | Info RT/RW, status verifikasi, badge penerima bantuan |
 | 📱 **Mobile-friendly** | Responsif untuk HP, dioptimalkan untuk penggunaan satu tangan |
 
 ---
@@ -181,19 +187,28 @@ goroyo/
 - [ ] Chat assistant berbasis keyword retrieval (offline-first, tanpa LLM)
 - [ ] Peta mitigasi bencana (OpenStreetMap + Leaflet)
 
-### V2 (6–12 bulan)
+### V2 — Modul Sosial & Pemberdayaan (6–12 bulan)
+- [ ] Edukasi ODHA & Penyakit Menular Seksual — stigma & cara memperlakukan dengan benar
+- [ ] Edukasi seksual untuk orang tua & remaja — pencegahan pergaulan bebas berbasis nilai
+- [ ] Tips membangun UMKM dari nol — modal kecil, pasar lokal RT/RW
+- [ ] Investasi aman & pemberdayaan kas RT/Masjid untuk pembiayaan UMKM warga
+- [ ] Edukasi menghadapi kejahatan kriminal: pencurian, perampokan, pelecehan seksual
+- [ ] Panduan lengkap disabilitas & inklusi sosial di komunitas
 - [ ] Transparansi keuangan RT/RW (iuran, CSR, hibah)
-- [ ] Sistem shift & manajemen jadwal petugas
-- [ ] Early Warning System (integrasi BMKG)
+- [ ] Sistem shift & manajemen jadwal petugas siskamling
+- [ ] Early Warning System (integrasi BMKG real-time)
 - [ ] Mode Krisis (UI darurat otomatis saat bencana besar)
 - [ ] Gamifikasi petugas (badge & reward digital)
 
-### V3 (12+ bulan)
+### V3 — Ekosistem Digital RT/RW (12+ bulan)
 - [x] ~~Sistem ketahanan pangan RT (kebun, kolam lele, urban farming)~~ ✅ Sudah ada di Pusat Edukasi
-- [ ] Dashboard statistik RT/RW untuk pengambilan keputusan
+- [ ] Dashboard statistik RT/RW untuk pengambilan keputusan ketua RT
 - [ ] Sinkronisasi lintas RW & kelurahan
-- [ ] Integrasi BNPB, PMI, Basarnas untuk konten edukasi resmi
+- [ ] Integrasi resmi BNPB, PMI, Basarnas untuk konten edukasi terverifikasi
 - [ ] AI offline ringan untuk klasifikasi laporan warga
+- [ ] Program beasiswa & bantuan perlengkapan sekolah berbasis kas RT
+- [ ] Direktori UMKM warga RT — marketplace hyperlocal
+- [ ] Sistem peringatan dini wabah penyakit berbasis laporan warga
 
 ---
 
@@ -259,8 +274,8 @@ Biaya mulai muncul saat scaling ke ratusan RT atau menggunakan SMS gateway dan f
 **Value Proposition terukur:**
 - ⚡ 0 detik loading — offline-first, panduan statis selalu tersedia
 - 🤖 Panduan AI kontekstual berdasarkan waktu kejadian (pagi/malam beda panduan)
-- 📚 13 panduan edukasi — dari CPR hingga urban farming & kesehatan mental
-- 📞 8 nomor darurat langsung bisa ditekan dari satu halaman
+- 📚 34 panduan edukasi dalam 6 kategori — dari CPR hingga baby blues & urban farming
+- 📞 12 nomor darurat langsung bisa ditekan dari satu halaman
 - 🌱 Ketahanan pangan komunitas sebagai bagian dari tanggap bencana jangka panjang
 
 ---
@@ -312,7 +327,7 @@ MIT License — bebas digunakan, dimodifikasi, dan dikembangkan untuk kepentinga
 
 ---
 
-*GoRoyo — Karena dalam kedaruratan, tetangga adalah pertolongan pertama.*
+*GoRoyo — Karena dalam kedaruratan, tetangga adalah ujung tombak pertolongan pertama.*
 
 ---
 
